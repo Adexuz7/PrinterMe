@@ -1,12 +1,9 @@
-<mxfile host="app.diagrams.net" modified="2021-06-13T13:11:40.373Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="S73hZLcCjL3f2vk0sNvY" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-13T13:15:16.313Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="gbgseRcXXbjsTrz4zBWC" version="14.7.7" type="github">
   <diagram id="5ftyGxo99AyewhtqQOWY" name="Page-1">
-    <mxGraphModel dx="2523" dy="3096" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFF0F9" math="0" shadow="1">
+    <mxGraphModel dx="2881" dy="3289" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFF0F9" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="QBKHciUDxmCOURVR-8X0-24" value="LOG OUT" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="750" y="-55" width="60" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="QBKHciUDxmCOURVR-8X0-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="QBKHciUDxmCOURVR-8X0-27" target="QBKHciUDxmCOURVR-8X0-28" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -151,12 +148,6 @@
         <mxCell id="QBKHciUDxmCOURVR-8X0-71" value="TECHNICS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="170" y="760" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-77" value="BUYER:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USERNAME: STRING, UNIQUE&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PASSWORD:&amp;nbsp; PASS&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;FOLLOWERS: ARRAY {USERID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;FOLLOWS: ARRAY {USERID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATIONS: ARRAY {PUBLICATIONID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_IMG: IMG&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_DESCR: STRING&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="940" y="-150" width="400" height="180" as="geometry" />
-        </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-78" value="SELLER:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USERNAME: STRING, UNIQUE&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PASSWORD:&amp;nbsp; PASS&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;FOLLOWERS: ARRAY {USERID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;FOLLOWS: ARRAY {USERID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATIONS: ARRAY {PUBLICATIONID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_IMG: IMG&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_DESCR: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;RATING: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SELLER_PUBLICATIONS: ARRAY {SELLER_PUBLICATIONID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SALES_HISTORY: ARRAY {SALESID}&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="940" y="40" width="400" height="240" as="geometry" />
-        </mxCell>
         <mxCell id="QBKHciUDxmCOURVR-8X0-79" value="BUYER PUBLICATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;" parent="1" vertex="1">
           <mxGeometry x="760" y="810" width="100" height="30" as="geometry" />
         </mxCell>
@@ -294,6 +285,17 @@
         </mxCell>
         <mxCell id="KE_npfrxVRi3qhekt5Sq-41" value="If Private:&lt;br&gt;You can ask to join but not see" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;" vertex="1" parent="1">
           <mxGeometry x="930" y="-555" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="KE_npfrxVRi3qhekt5Sq-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="KE_npfrxVRi3qhekt5Sq-44" target="KE_npfrxVRi3qhekt5Sq-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KE_npfrxVRi3qhekt5Sq-44" value="SELLER" style="swimlane;rounded=0;shadow=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="-340" y="-420" width="340" height="190" as="geometry">
+            <mxRectangle x="-30" y="-505" width="80" height="23" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KE_npfrxVRi3qhekt5Sq-45" value="&lt;div style=&quot;text-align: justify&quot;&gt;user: {userID}&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;rating: Number&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;seller_publications: Array[{seller_publicationID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;sales_history: Array[{buyID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;printers: Array[{printerID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="KE_npfrxVRi3qhekt5Sq-44">
+          <mxGeometry y="25" width="340" height="165" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
