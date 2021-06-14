@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-14T09:27:38.356Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="vJPzsF10lIDBLQWWgPj0" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-14T12:00:21.841Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="RtbR7pzMAQPaL76a3gfk" version="14.7.7" type="github">
   <diagram id="5ftyGxo99AyewhtqQOWY" name="Page-1">
-    <mxGraphModel dx="5329" dy="3299" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFF0F9" math="0" shadow="1">
+    <mxGraphModel dx="4043" dy="2566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFF0F9" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -240,7 +240,7 @@
         <mxCell id="KE_npfrxVRi3qhekt5Sq-57" value="BRANDS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-185" y="-220" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="KE_npfrxVRi3qhekt5Sq-59" value="COLLECTIONABLES&lt;br&gt;DESIGNS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="KE_npfrxVRi3qhekt5Sq-59" value="COLLECTABLES&lt;br&gt;DESIGNS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-185" y="-180" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KE_npfrxVRi3qhekt5Sq-60" value="TECHNICS DESIGNS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -388,11 +388,28 @@
         <mxCell id="U8-rn404tNzsRlTI059o-1" value="NOTIFICATIONS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="660" y="-640" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="zooJIcL84Sx9MmKqIp7m-1" value="SALES:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRODUCT: {PRODUCTID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRICE_PER_UNIT: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;QUANTITY: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SEND: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DATE: DATE&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;BUYER: {USERID}&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
+        <mxCell id="zooJIcL84Sx9MmKqIp7m-1" value="SALES:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRODUCT: {PRODUCTID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SERVICE: {SERVICEID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRICE_PER_UNIT: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;QUANTITY: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SEND: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DATE: DATE&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;BUYER: {USERID}&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="-3040" y="-1775" width="400" height="170" as="geometry" />
         </mxCell>
         <mxCell id="zooJIcL84Sx9MmKqIp7m-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="zooJIcL84Sx9MmKqIp7m-2" target="zooJIcL84Sx9MmKqIp7m-4">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zooJIcL84Sx9MmKqIp7m-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="zooJIcL84Sx9MmKqIp7m-2" target="zooJIcL84Sx9MmKqIp7m-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1640" y="-1070" />
+              <mxPoint x="-2650" y="-1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zooJIcL84Sx9MmKqIp7m-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zooJIcL84Sx9MmKqIp7m-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2940" y="-1610" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1740" y="-1130" />
+              <mxPoint x="-2940" y="-1130" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="zooJIcL84Sx9MmKqIp7m-2" value="PRINT SERVICE:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRICE: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRINTER: {3D_PRINTERID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;TYPE: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMG: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="-1840" y="-1340" width="400" height="160" as="geometry" />
@@ -400,14 +417,23 @@
         <mxCell id="zooJIcL84Sx9MmKqIp7m-3" value="3D_PRINTERS:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;BRAND: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;MODEL: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMP_MIN: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMP_MAX: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;MATERIALS: ARRAY(STRINGS)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="-2850" y="-1360" width="400" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="zooJIcL84Sx9MmKqIp7m-4" value="SELLER PUBLICATIONS:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMAGE: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;COMMENTS: ARRAY[{COMMENTID}]&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;REPORTS: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION_RATE: NUMBER (MEDIA OF COMMENTS RATE)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRODUCT: {PRODUCTID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION: {PUBLICATIONID}&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
-          <mxGeometry x="-2050" y="-1670" width="400" height="170" as="geometry" />
+        <mxCell id="zooJIcL84Sx9MmKqIp7m-4" value="SELLER PUBLICATIONS:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMAGE: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;COMMENTS: ARRAY[{COMMENTID}]&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;REPORTS: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION_RATE: NUMBER (MEDIA OF COMMENTS RATE)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRODUCT: {PRODUCTID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SERVICE: {SERVICEID}&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="-2060" y="-1670" width="400" height="170" as="geometry" />
         </mxCell>
         <mxCell id="zooJIcL84Sx9MmKqIp7m-5" value="&lt;div&gt;&lt;span&gt;USER PUBLICATIONS:&lt;/span&gt;&lt;/div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMAGE: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;COMMENTS: ARRAY[{COMMENTID}]&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;REPORTS: NUMBER&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="-2190" y="-2140" width="400" height="160" as="geometry" />
         </mxCell>
         <mxCell id="zooJIcL84Sx9MmKqIp7m-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="zooJIcL84Sx9MmKqIp7m-6" target="zooJIcL84Sx9MmKqIp7m-4">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zooJIcL84Sx9MmKqIp7m-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zooJIcL84Sx9MmKqIp7m-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2940" y="-1605" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2180" y="-1130" />
+              <mxPoint x="-2940" y="-1130" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="zooJIcL84Sx9MmKqIp7m-6" value="DESIGN PRODUCT:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRICE: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;TAGS: ARRAY[STRING]&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;TYPE: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMG: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" vertex="1" parent="1">
           <mxGeometry x="-2280" y="-1340" width="400" height="160" as="geometry" />
