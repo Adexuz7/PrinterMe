@@ -5,7 +5,7 @@ PrinterMe is our Social Media Web created to help people to find 3D printers as 
 
 # Installation
 
-You have to install all the npm packages (```$npm install```) from your console to use it.
+You have to install all the npm packages ```$npm install``` from your console to use it.
 
 # Usage
 
