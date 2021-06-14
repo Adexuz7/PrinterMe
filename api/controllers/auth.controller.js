@@ -50,12 +50,11 @@ exports.login = (req, res) => {
           if (!result) {
             return res.json({ error: `Wrong email or password` })
           }
-
           const user_data = { name: user.name, email: user.email }
 
           const token = jwt.sign(
             user_data,
-            process.env.SECRET, // TODO SECRET MORE SECRET PLEASE
+            process.env.SECRET,
             { expiresIn: '1h' }
           )
           return res.json({ token: token, ...user_data })
