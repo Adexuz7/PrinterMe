@@ -29,3 +29,7 @@ This project was created and developed by:
 Álvaro Poncio Jiménez (Aponcio)
 Andrés Galván García (Adexuz7)
 Manuel Alejandro González Afonso (ManuYuzu)
+
+# License
+
+MIT License.
