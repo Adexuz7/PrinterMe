@@ -56,7 +56,7 @@ const userSchema = new mongoose.Schema({
   },
   publications: [{
     type: mongoose.Types.ObjectId,
-    ref: 'publications'
+    ref: 'userPublications'
   }],
   comments: [{
     type: mongoose.Types.ObjectId,
