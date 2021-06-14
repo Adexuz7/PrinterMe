@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-14T08:47:19.841Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="bOditVbXXEmOJAL914wN" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-14T08:47:43.629Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="0aaCKcSwX31WSwFzc2Pc" version="14.7.7" type="github">
   <diagram id="5ftyGxo99AyewhtqQOWY" name="Page-1">
     <mxGraphModel dx="2779" dy="3299" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFF0F9" math="0" shadow="1">
       <root>
@@ -56,7 +56,7 @@
           <mxGeometry x="-825" y="-1470" width="400" height="160" as="geometry" />
         </mxCell>
         <mxCell id="QBKHciUDxmCOURVR-8X0-86" value="3D_PRINTERS:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;BRAND: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;MODEL: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMP_MIN: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMP_MAX: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;MATERIALS: ARRAY(STRINGS)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-410" y="-2000" width="400" height="170" as="geometry" />
+          <mxGeometry x="-410" y="-2000" width="400" height="160" as="geometry" />
         </mxCell>
         <mxCell id="QBKHciUDxmCOURVR-8X0-87" value="SELLER PUBLICATIONS:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION_RATE: NUMBER (MEDIA OF COMMENTS RATE)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRODUCT: {PRODUCTID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION: {PUBLICATIONID}&amp;nbsp;&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;REPORTS: NUMBER&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
           <mxGeometry x="-825" y="-1830" width="400" height="170" as="geometry" />
