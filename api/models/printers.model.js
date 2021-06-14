@@ -13,10 +13,6 @@ const printersSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Model is required']
   },
-  impMin: {
-    type: String,
-    required: [true, 'Introduce the minimum printing space']
-  },
   impMax: {
     type: String,
     required: [true, 'Introduce the maximum printing space']
