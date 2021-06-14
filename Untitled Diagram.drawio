@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-14T12:00:21.841Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="RtbR7pzMAQPaL76a3gfk" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-14T13:08:39.299Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="afQkfIodQ5g9tdZDUlkX" version="14.7.7" type="github">
   <diagram id="5ftyGxo99AyewhtqQOWY" name="Page-1">
-    <mxGraphModel dx="4043" dy="2566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFF0F9" math="0" shadow="1">
+    <mxGraphModel dx="6100" dy="3738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFF0F9" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -49,21 +49,6 @@
         <mxCell id="QBKHciUDxmCOURVR-8X0-58" value="MATERIALS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-185" y="-260" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-84" value="SALES:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRODUCT: {PRODUCTID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRICE_PER_UNIT: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;QUANTITY: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SEND: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DATE: DATE&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;BUYER: {USERID}&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-825" y="-1650" width="400" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-85" value="PRINT PRODUCT:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRICE: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRINTER: {3D_PRINTERID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;TYPE: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMG: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-825" y="-1470" width="400" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-86" value="3D_PRINTERS:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;BRAND: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;MODEL: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMP_MIN: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMP_MAX: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;MATERIALS: ARRAY(STRINGS)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-410" y="-2000" width="400" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-87" value="SELLER PUBLICATIONS:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION_RATE: NUMBER (MEDIA OF COMMENTS RATE)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRODUCT: {PRODUCTID}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION: {PUBLICATIONID}&amp;nbsp;&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;REPORTS: NUMBER&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-825" y="-1830" width="400" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-88" value="&lt;div&gt;&lt;span&gt;USER PUBLICATIONS:&lt;/span&gt;&lt;/div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMAGE: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;COMMENTS: ARRAY[{COMMENTID}]&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;REPORTS: NUMBER&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-825" y="-2000" width="400" height="160" as="geometry" />
-        </mxCell>
         <mxCell id="KE_npfrxVRi3qhekt5Sq-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="QBKHciUDxmCOURVR-8X0-89" target="KE_npfrxVRi3qhekt5Sq-112" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -76,11 +61,8 @@
         <mxCell id="QBKHciUDxmCOURVR-8X0-89" value="GROUPS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1035" y="-640" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="QBKHciUDxmCOURVR-8X0-91" value="DESIGN PRODUCT:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;NAME: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;DESCRIPTION: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PRICE: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;TAGS: ARRAY[STRING]&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;TYPE: STRING&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMG: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-825" y="-1300" width="400" height="170" as="geometry" />
-        </mxCell>
         <mxCell id="QBKHciUDxmCOURVR-8X0-92" value="&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;ENDPOINTS:&lt;/span&gt;&lt;/div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;HOME: /HOME&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PROFILE: /PROFILE/:USERID&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_PUBLICATION: /PROFILE/:USERID/:USER_PUBLICATIONID&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SELLER_PUBLICATION: /PROFILE/:USERID/:SELLER_PUBLICATIONID&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_PROFILE_IMG: /PROFILE/:IMAGEID&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_GALLERY: /IMAGES&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;USER_IMG: ./:IMGID&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;GROUPS: /GROUP&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;PUBLICATION: /:PUBLICATIONID&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;EXPLORE: /EXPLORE&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;SEARCH: ./SEARCH?FILTERNAME=(...)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;FILTER: ./FILTER/:FILTERNAME&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;ul&gt;&lt;li&gt;PRODUCT: /PRODUCTS/:PRODUCTID&lt;/li&gt;&lt;li&gt;USER_COMMENT: /COMMENT/:USERID/:USER_COMMENT&lt;/li&gt;&lt;li&gt;HISTORY_BUY&amp;amp;SELL: /HISTORY/&lt;/li&gt;&lt;li&gt;SALES: /HISTORY/SALES/&lt;/li&gt;&lt;ul&gt;&lt;li&gt;SALE: /:SALEID&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;BUYS: /HISTORY/BUYS/&lt;/li&gt;&lt;ul&gt;&lt;li&gt;BUY: /:BUYID&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-785" y="70" width="610" height="340" as="geometry" />
+          <mxGeometry x="-1090" y="-1290" width="610" height="340" as="geometry" />
         </mxCell>
         <mxCell id="KE_npfrxVRi3qhekt5Sq-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KE_npfrxVRi3qhekt5Sq-1" target="KE_npfrxVRi3qhekt5Sq-5" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -90,9 +72,9 @@
         <mxCell id="KE_npfrxVRi3qhekt5Sq-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="KE_npfrxVRi3qhekt5Sq-1" target="KE_npfrxVRi3qhekt5Sq-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="KE_npfrxVRi3qhekt5Sq-1" value="USER" style="swimlane;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;startSize=20;arcSize=30;swimlaneLine=1;" parent="1" vertex="1">
-          <mxGeometry x="-175" y="-1710" width="330" height="330" as="geometry">
-            <mxRectangle x="-30" y="-890" width="70" height="23" as="alternateBounds" />
+        <mxCell id="KE_npfrxVRi3qhekt5Sq-1" value="USER" style="swimlane;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=0;startSize=20;arcSize=30;swimlaneLine=1;" parent="1" vertex="1" collapsed="1">
+          <mxGeometry x="-175" y="-1710" width="70" height="23" as="geometry">
+            <mxRectangle x="-175" y="-1710" width="330" height="330" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KE_npfrxVRi3qhekt5Sq-3" value="&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;name: String&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;username: {String, unique}&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;password: String&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;e-mail: {String, unique}&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;phone: {Number, unique}&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;rol: String&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;followers: Array[{userID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;follows: Array[{userID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;user_image: Image&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;banner_image: Image&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;user_description: String&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;public: Boolean&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;reports: Number&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;publications: Array[{publicationID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;comments: Array[{commentID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;buylist: Array[{saleID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;arcSize=5;" parent="KE_npfrxVRi3qhekt5Sq-1" vertex="1">
@@ -196,9 +178,9 @@
         <mxCell id="KE_npfrxVRi3qhekt5Sq-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="KE_npfrxVRi3qhekt5Sq-44" target="KE_npfrxVRi3qhekt5Sq-3" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="KE_npfrxVRi3qhekt5Sq-44" value="SELLER" style="swimlane;rounded=1;shadow=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="-180" y="-1360" width="340" height="150" as="geometry">
-            <mxRectangle x="-340" y="-420" width="80" height="23" as="alternateBounds" />
+        <mxCell id="KE_npfrxVRi3qhekt5Sq-44" value="SELLER" style="swimlane;rounded=1;shadow=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1" collapsed="1">
+          <mxGeometry x="-180" y="-1350" width="80" height="23" as="geometry">
+            <mxRectangle x="-180" y="-1360" width="340" height="150" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="KE_npfrxVRi3qhekt5Sq-45" value="&lt;div style=&quot;text-align: justify&quot;&gt;user: {userID}&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;rating: Number&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;seller_publications: Array[{seller_publicationID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;sales_history: Array[{saleID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;printers: Array[{printerID}]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;rol: Array[Strings]&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" parent="KE_npfrxVRi3qhekt5Sq-44" vertex="1">
@@ -381,9 +363,6 @@
         </mxCell>
         <mxCell id="KE_npfrxVRi3qhekt5Sq-120" value="FOR PEOPLE TO ASK FOR HELP OR DO SPECIFIC PETITIONS TO EVERYONE ELSE" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1155" y="-530" width="280" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="KE_npfrxVRi3qhekt5Sq-122" value="USER COMMENT:&lt;br&gt;&lt;ul&gt;&lt;li style=&quot;text-align: justify&quot;&gt;IMAGE: ARRAY[IMG] (EMBEDDED)&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;TITLE: STRING,&lt;br&gt;DESCRIPTION: STRING}&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;RATE: NUMBER&lt;/li&gt;&lt;li style=&quot;text-align: justify&quot;&gt;REPORTS: NUMBER&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;shadow=1;sketch=0;glass=0;align=center;labelBorderColor=none;strokeWidth=2;horizontal=1;arcSize=8;" parent="1" vertex="1">
-          <mxGeometry x="-825" y="-1120" width="400" height="160" as="geometry" />
         </mxCell>
         <mxCell id="U8-rn404tNzsRlTI059o-1" value="NOTIFICATIONS" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="660" y="-640" width="120" height="60" as="geometry" />
