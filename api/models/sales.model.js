@@ -3,12 +3,12 @@ const mongoose = require('mongoose')
 const saleSchema = new mongoose.Schema({
   designProduct: {
     type: mongoose.Types.ObjectId,
-    ref: 'design-products',
+    ref: 'designProducts',
     required: true
   },
   printService: {
     type: mongoose.Types.ObjectId,
-    ref: 'print-services',
+    ref: 'printServices',
     required: true
   },
   unitPrice: {
