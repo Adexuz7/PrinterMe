@@ -7,9 +7,17 @@ const commentSchema = new mongoose.Schema({
   
   description: {
     type: String,
-    required: [true, 'Description is required'],
     max: 300
   },
+  rate: {
+    type: Number,
+    min: 0,
+    max: 5,
+    required: [true, 'Rate is required']
+  },
+  reports: {
+    type: Number
+  }
 })
 
 exports.CommentModel = mongoose.model('designProducts', commentSchema)
