@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const userPublicationSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Types.ObjectId,
+    required: true
+  },
   description: {
     type: String,
     max: 300,
@@ -24,4 +28,4 @@ const userPublicationSchema = new mongoose.Schema({
   }
 })
 
-exports.UserPublicationModel = mongoose.model('userPublications', userPublicationSchema)
+exports.UserPublicationsModel = mongoose.model('userPublications', userPublicationSchema)
