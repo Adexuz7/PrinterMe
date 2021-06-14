@@ -21,14 +21,14 @@ We would like to implement the following ideas in the future:
 * Fully functional Groups.
 * Private user profiles and groups.
 * A Business profile.
-* An awesome and colorfull Front-end
+* An awesome and colorful Front-end
 
 # Authors
 
 This project was created and developed by:
-- Álvaro Poncio Jiménez (Aponcio)
+- [Álvaro Poncio Jiménez](https://github.com/aponcio)
 - [Andrés Galván García](https://github.com/Adexuz7)
-- Manuel Alejandro González Afonso (ManuYuzu)
+- [Manuel Alejandro González Afonso](https://github.com/ManuYuzu)
 
 # License
 
