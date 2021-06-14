@@ -20,7 +20,7 @@ exports.signup = (req, res) => {
             phone: req.body.phone
           })
           .then(user => {
-            const user_data = { name: user.name, email: user.email }
+            const user_data = { email: user.email, role: user.role }
 
             const token = jwt.sign(
               user_data,
