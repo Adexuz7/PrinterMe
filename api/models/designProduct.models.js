@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 
 const designProductSchema = new mongoose.Schema({
   Title: {
-    type: String, 
+    type: String,
     required: [true, 'Title is required']
   },
-  description:{
+  description: {
     type: String,
     required: [true, 'Description is required'],
     max: 500

@@ -15,7 +15,7 @@ const printServiceSchema = new mongoose.Schema({
     required: [true, 'Price is required']
   },
   printers: [{
-    type: mongoose.Types.ObjectId
+    type: mongoose.Types.ObjectId,
     ref: 'printers'
   }],
   type: {

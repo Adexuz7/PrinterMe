@@ -4,7 +4,6 @@ const commentSchema = new mongoose.Schema({
   image: [{
     type: String
   }],
-  
   description: {
     type: String,
     max: 300

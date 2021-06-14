@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 const userPublicationSchema = new mongoose.Schema({
   description: {
     type: String,
-    max: 300, 
+    max: 300,
     required: [true, 'You have to put a description']
-  }, 
+  },
   image: {
     type: Array,
     items: {
