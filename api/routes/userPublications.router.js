@@ -1,4 +1,4 @@
-const userPublicationRouter = require('express').Router()
+const userPublicationsRouter = require('express').Router()
 const { checkAuth } = require('../../utils')
 
 const {
@@ -6,7 +6,7 @@ const {
   createUserPublication
 } = require('../controllers/usersPublications.controller')
 
-userPublicationRouter.get('/', checkAuth, getAllUsersPublications)
-userPublicationRouter.post('/', createUserPublication)
+userPublicationsRouter.get('/', checkAuth, getAllUsersPublications)
+userPublicationsRouter.post('/', createUserPublication)
 
-exports.userPublicationRouter = userPublicationRouter
+exports.userPublicationsRouter = userPublicationsRouter

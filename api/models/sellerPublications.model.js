@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const sellerPublicationSchema = new mongoose.Schema({
+  sellerId: {
+    type: mongoose.Types.ObjectId,
+    required: true
+  },
   description: {
     type: String,
     max: 300,
@@ -36,4 +40,4 @@ const sellerPublicationSchema = new mongoose.Schema({
   }]
 })
 
-exports.SellerPublicationModel = mongoose.model('sellerPublications', sellerPublicationSchema)
+exports.SellerPublicationsModel = mongoose.model('sellerPublications', sellerPublicationSchema)

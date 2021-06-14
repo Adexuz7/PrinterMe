@@ -1,7 +1,7 @@
-const { UserPublicationsModel } = require('../models/userPublications.model')
+const { SellerPublicationsModel } = require('../models/sellerPublications.model')
 
-exports.getAllUsersPublications = (req, res) => {
-  UserPublicationsModel
+exports.getAllSellersPublications = (req, res) => {
+  SellerPublicationsModel
     .find()
     .then(publications => {
       res.json(publications)
@@ -12,8 +12,8 @@ exports.getAllUsersPublications = (req, res) => {
     })
 }
 
-exports.createUserPublication = (req, res) => {
-  UserPublicationsModel
+exports.createSellerPublication = (req, res) => {
+  SellerPublicationsModel
     .create(req.body)
     .then(publication => {
       res.status(200).json(publication)
