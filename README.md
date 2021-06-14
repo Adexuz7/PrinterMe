@@ -27,7 +27,7 @@ We would like to implement the following ideas in the future:
 
 This project was created and developed by:
 - Álvaro Poncio Jiménez (Aponcio)
-- Andrés Galván García (Adexuz7)
+- [Andrés Galván García](https://github.com/Adexuz7)
 - Manuel Alejandro González Afonso (ManuYuzu)
 
 # License
