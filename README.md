@@ -39,6 +39,24 @@ Example:
     "password": "example"
 }
 ```
+## Profile
+### Get your profile
+GET
+```
+{{baseUrl}}/profile
+```
+
+### Edit profile
+Edit your user profile with PATCH
+```
+{{baseUrl}}/profile
+```
+Example:
+```
+{
+    "phone": 123456789
+}
+```
 
 ## Publications
 
