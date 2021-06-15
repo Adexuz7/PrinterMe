@@ -74,3 +74,17 @@ exports.followUser = (req, res) => {
       res.status(500).json({ err: 'Error' })
     })
 }
+
+exports.getAllSellers = (req, res) => {
+  UserModel
+    .find({ role: 'seller'})
+
+    .then(sellers => {
+      console.log(sellers)
+      res.json(sellers)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}

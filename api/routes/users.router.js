@@ -6,12 +6,14 @@ const {
   createUser,
   userTimeline,
   followUser,
-  getUser
+  getUser,
+  getAllSellers
 } = require('../controllers/users.controller')
 
 userRouter
   .get('/', checkAuth, getAllUsers)
   .get('/timeline', checkAuth, userTimeline)
+  .get('/sellers', checkAuth, getAllSellers)
   .get('/:userid', getUser)
   .post('/', createUser)
   .put('/:userid', checkAuth, followUser)
