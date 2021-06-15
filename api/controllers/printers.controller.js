@@ -23,3 +23,15 @@ exports.createPrinters = (req, res) => {
       res.status(500).json({ err: 'Error' })
     })
 }
+
+exports.deletePrinters = (req, res) => {
+  PrintersModel
+    .deleteOne({ _id: req.body._id })
+    .then(printer => {
+      res.status(200).json(printer)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}

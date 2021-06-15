@@ -11,7 +11,9 @@ const {
   followUser,
   getUser,
   deleteUser,
-  getAllSellers
+  getAllSellers,
+  addUserPrinter,
+  removeUserPrinter
 } = require('../controllers/users.controller')
 
 userRouter
@@ -20,7 +22,8 @@ userRouter
   .get('/sellers', checkAuth, getAllSellers)
   .get('/:userid', checkAuth, getUser)
   .post('/', checkAuth, createUser)
+  .put('/printer', checkAuth, addUserPrinter)
   .put('/:userid', checkAuth, followUser)
   .delete('/delete', checkAuth, deleteUser)
-
+  .delete('/printer', checkAuth, removeUserPrinter)
 exports.userRouter = userRouter
