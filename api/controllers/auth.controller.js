@@ -46,6 +46,7 @@ exports.login = (req, res) => {
   UserModel
     .findOne({ email: req.body.email })
     .then(user => {
+      if (!user) res.status(404).send('User not found')
       if (user) {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (!result) {

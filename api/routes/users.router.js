@@ -7,6 +7,7 @@ const {
   userTimeline,
   followUser,
   getUser,
+  deleteUser,
   getAllSellers
 } = require('../controllers/users.controller')
 
@@ -17,5 +18,6 @@ userRouter
   .get('/:userid', checkAuth, getUser)
   .post('/', checkAuth, createUser)
   .put('/:userid', checkAuth, followUser)
+  .delete('/delete', checkAuth, deleteUser)
 
 exports.userRouter = userRouter
