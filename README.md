@@ -34,8 +34,9 @@ GET
 ```
 ### Post a publication
 Yo need to be logged in to make a new publication
+POST
 ```
-POST baseUrl/publications
+{{baseUrl}}/publications
 ```
 Example:
 ```
