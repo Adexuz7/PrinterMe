@@ -57,6 +57,9 @@ const publicationSchema = new mongoose.Schema({
     service: [{
       type: mongoose.Types.ObjectId,
       ref: 'printServices'
+    }],
+    tag: [{
+      type: String
     }]
   }
 })

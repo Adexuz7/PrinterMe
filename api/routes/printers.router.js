@@ -1,5 +1,8 @@
 const printersRouter = require('express').Router()
-const { checkAuth } = require('../../utils')
+const {
+  checkAuth,
+  isAdmin
+} = require('../../utils')
 
 const {
   getAllPrinters,
@@ -7,6 +10,6 @@ const {
 } = require('../controllers/printers.controller')
 
 printersRouter.get('/', checkAuth, getAllPrinters)
-printersRouter.post('/', checkAuth, createPrinters)
+printersRouter.post('/', checkAuth, isAdmin, createPrinters)
 
 exports.printersRouter = printersRouter

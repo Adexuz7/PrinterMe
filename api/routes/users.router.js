@@ -1,5 +1,8 @@
 const userRouter = require('express').Router()
-const { checkAuth } = require('../../utils')
+const {
+  checkAuth,
+  isAdmin
+} = require('../../utils')
 
 const {
   getAllUsers,
@@ -12,7 +15,7 @@ const {
 } = require('../controllers/users.controller')
 
 userRouter
-  .get('/', checkAuth, getAllUsers)
+  .get('/', checkAuth, isAdmin, getAllUsers)
   .get('/timeline', checkAuth, userTimeline)
   .get('/sellers', checkAuth, getAllSellers)
   .get('/:userid', checkAuth, getUser)

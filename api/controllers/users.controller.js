@@ -90,7 +90,7 @@ exports.followUser = (req, res) => {
 
 exports.getAllSellers = (req, res) => {
   UserModel
-    .find({ role: 'seller'})
+    .find({ role: 'seller' })
 
     .then(sellers => {
       console.log(sellers)
