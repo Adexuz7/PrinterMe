@@ -46,6 +46,11 @@ Example:
 }
 ```
 ## Comments
+### Get all comments
+GET
+```
+{{baseUrl}}/publications/{{publicationId}}/comment
+```
 ### Add comment
 POST
 ```
