@@ -20,13 +20,25 @@ const publicationSchema = new mongoose.Schema({
       type: String
     }
   },
-  comment: {
-    type: Array,
-    items: {
-      type: mongoose.Types.ObjectId,
-      ref: 'comments'
+  comment: [{
+    description: {
+      type: String,
+      max: 300,
+      required: [true, 'Comment description is required']
+    },
+    rate: {
+      type: Number,
+      min: 0,
+      max: 5,
+      required: [true, 'Rate is required']
+    },
+    image: [{
+      type: String
+    }],
+    report: {
+      type: Number
     }
-  },
+  }],
   report: {
     type: Number
   },
