@@ -43,6 +43,19 @@ Example:
     "description": "This is a test publication"
 }
 ```
+## Comments
+### Add comment
+POST:
+```
+{{baseUrl}}/publications/{{publicationId}}/comment
+```
+Example:
+```
+{
+    "description": "This is a test comment",
+    "rate": 4
+}
+```
 # Usage
 
 As every Social Media, you're going to have a Profile with a follow/follower system, a Timeline to be always wondered by the publications and comments of your followed users, an Explore site to watch new publications of random people and Groups, to make great communities to support you in case of any doubt you would have.
