@@ -1,7 +1,6 @@
-const { UserModel } = require('../models/users.model')
 const { PublicationsModel } = require('../models/publications.model')
 
-exports.getAllUsersPublications = (req, res) => {
+exports.getAllPublications = (req, res) => {
   PublicationsModel
     .find()
     .then(publications => {
@@ -13,20 +12,18 @@ exports.getAllUsersPublications = (req, res) => {
     })
 }
 
-exports.createUserPublication = (req, res) => {
+exports.createPublication = (req, res) => {
+  const user = res.locals.user
+  req.body.userId = user._id // Add userid to request body
+
   PublicationsModel
     .create(req.body)
-    .then(publication => {
-      res.status(200).json(publication)
-      UserModel
-        .findById(req.body.userid)
-        .then(user => {
-          user.publications.push(publication.id) // Add publication ref to user publications
-          user.save() // Save changes to db
-        })
-        .catch(err => {
-          console.log('Error referencing publication to user', err)
-        })
+    .then(newPublication => {
+      res.status(200).json(newPublication)
+      user.publication.push(newPublication.id) // Add publication ref to user publications
+      user.save() // Save changes to db
+        .then(user => console.log('Publication OK'))
+        .catch(err => console.log(err))
     })
     .catch(err => {
       console.log(err)
