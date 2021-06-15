@@ -11,23 +11,51 @@ You have to install all the npm packages ```$npm install``` from your console to
 
 Actually PrinterMe is developed to be a Back-end project, so it's not going to have a Front. By the way, you can use it installing all the npm packages and doing all the request in Postman.
 
-## Publications
 ```
 baseUrl = http://localhost:3000/api
 ```
-### Get all publications
+## Login
 ```
-GET baseUrl/publications
+{{baseUrl}}/auth/login
+```
+```
+{
+    "email": "example@example.com",
+    "password": "example"
+}
+```
+
+## Publications
+
+### Get all publications
+GET
+```
+{{baseUrl}}/publications
 ```
 ### Post a publication
 Yo need to be logged in to make a new publication
+POST
 ```
-POST baseUrl/publications
+{{baseUrl}}/publications
 ```
-Request body example:
+Example:
 ```
 {
+    "title": "Test publication",
     "description": "This is a test publication"
+}
+```
+## Comments
+### Add comment
+POST
+```
+{{baseUrl}}/publications/{{publicationId}}/comment
+```
+Example:
+```
+{
+    "description": "This is a test comment",
+    "rate": 4
 }
 ```
 # Usage

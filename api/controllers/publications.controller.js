@@ -30,3 +30,22 @@ exports.createPublication = (req, res) => {
       res.status(500).json({ err: 'Error' })
     })
 }
+
+exports.addComment = (req, res) => {
+  const user = res.locals.user
+
+  PublicationsModel
+    .findById(req.params.publication)
+    .then(publication => {
+      publication.comment.push(req.body)
+      publication.save()
+        .then(publication => {
+          user.comment.push(publication.id)
+          user.save()
+            .then(user => res.status(200).json('Comment OK'))
+            .catch(err => console.log(err))
+        })
+        .catch(err => console.log(err))
+    })
+    .catch(err => res.status(500).json(err))
+}
