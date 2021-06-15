@@ -3,10 +3,12 @@ const { checkAuth } = require('../../utils')
 
 const {
   getAllPrinters,
-  createPrinters
+  createPrinters,
+  deletePrinters
 } = require('../controllers/printers.controller')
 
 printersRouter.get('/', checkAuth, getAllPrinters)
 printersRouter.post('/', checkAuth, createPrinters)
+printersRouter.delete('/', checkAuth, deletePrinters)
 
 exports.printersRouter = printersRouter
