@@ -17,7 +17,8 @@ exports.signup = (req, res) => {
             username: req.body.username,
             password: hashedPwd,
             email: req.body.email,
-            phone: req.body.phone
+            phone: req.body.phone,
+            role: req.body.role
           })
           .then(user => {
             const userData = { email: user.email, role: user.role }

@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 
 const printersSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, 'Printer name is required']
-  },
   brand: {
     type: String,
     required: [true, 'Brand is required']
