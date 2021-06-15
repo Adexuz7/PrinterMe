@@ -31,6 +31,15 @@ exports.createPublication = (req, res) => {
     })
 }
 
+exports.getAllComments = (req, res) => {
+  PublicationsModel
+    .findById(req.params.publication)
+    .then(publication => {
+      res.status(200).json(publication.comment)
+    })
+    .catch(err => res.status(500).json(err))
+}
+
 exports.addComment = (req, res) => {
   const user = res.locals.user
 
