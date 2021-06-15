@@ -20,7 +20,7 @@ baseUrl = http://localhost:3000/api
 GET baseUrl/publications
 ```
 ### Post a publication
-Yo need to be loged in to make a new publication
+Yo need to be logged in to make a new publication
 ```
 POST baseUrl/publications
 ```
