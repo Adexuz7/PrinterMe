@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const userPublicationSchema = new mongoose.Schema({
+const publicationSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Types.ObjectId,
     required: true
@@ -45,4 +45,4 @@ const userPublicationSchema = new mongoose.Schema({
   }
 })
 
-exports.UserPublicationsModel = mongoose.model('userPublications', userPublicationSchema)
+exports.PublicationsModel = mongoose.model('publications', publicationSchema)

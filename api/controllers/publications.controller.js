@@ -1,8 +1,8 @@
-const { UserPublicationsModel } = require('../models/userPublications.model')
 const { UserModel } = require('../models/users.model')
+const { PublicationsModel } = require('../models/publications.model')
 
 exports.getAllUsersPublications = (req, res) => {
-  UserPublicationsModel
+  PublicationsModel
     .find()
     .then(publications => {
       res.json(publications)
@@ -15,7 +15,7 @@ exports.getAllUsersPublications = (req, res) => {
 
 exports.createUserPublication = (req, res) => {
   console.log(req.body)
-  UserPublicationsModel
+  PublicationsModel
     .create(req.body)
     .then(publication => {
       res.status(200).json(publication)
