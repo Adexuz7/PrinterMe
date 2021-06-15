@@ -26,14 +26,14 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['user', 'admin'],
+    enum: ['user', 'seller', 'admin'],
     default: 'user'
   },
-  followers: [{
+  follower: [{
     type: mongoose.Types.ObjectId,
     ref: 'users'
   }],
-  follows: [{
+  follow: [{
     type: mongoose.Types.ObjectId,
     ref: 'users'
   }],
@@ -51,21 +51,40 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: true
   },
-  reports: {
+  report: {
     type: Number
   },
-  publications: [{
+  publication: [{
     type: mongoose.Types.ObjectId,
-    ref: 'publications'
+    ref: 'userPublications'
   }],
-  comments: [{
+  comment: [{
     type: mongoose.Types.ObjectId,
     ref: 'comments'
   }],
   buyList: [{
     type: mongoose.Types.ObjectId,
     ref: 'sales'
-  }]
+  }],
+  seller: {
+    rating: {
+      type: Number
+    },
+    salesHistory: [{
+      type: mongoose.Types.ObjectId,
+      ref: 'sales'
+    }],
+    printer: [{
+      type: mongoose.Types.ObjectId,
+      ref: 'printers'
+    }],
+    designer: {
+      type: Boolean
+    },
+    technical: {
+      type: Boolean
+    }
+  }
 })
 
 exports.UserModel = mongoose.model('users', userSchema)
