@@ -27,6 +27,7 @@ POST baseUrl/publications
 Request body example:
 ```
 {
+    "title": "Test publication",
     "description": "This is a test publication"
 }
 ```
