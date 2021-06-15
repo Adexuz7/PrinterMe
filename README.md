@@ -24,7 +24,7 @@ Yo need to be logged in to make a new publication
 ```
 POST baseUrl/publications
 ```
-Request body example:
+Example:
 ```
 {
     "title": "Test publication",
