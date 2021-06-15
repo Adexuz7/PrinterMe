@@ -36,6 +36,20 @@ exports.createUser = (req, res) => {
     })
 }
 
+exports.deleteUser = (req, res) => {
+  console.log(res.locals.user)
+  UserModel
+    .deleteOne({ _id: res.locals.user._id })
+    .then(user => {
+      console.log('user: ', user)
+      res.status(200).json(user)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json(err)
+    })
+}
+
 exports.userTimeline = (req, res) => {
   UserModel
     .find({ _id: { $in: res.locals.user.follows } })
