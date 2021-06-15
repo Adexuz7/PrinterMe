@@ -28,8 +28,9 @@ baseUrl = http://localhost:3000/api
 ## Publications
 
 ### Get all publications
+GET
 ```
-GET baseUrl/publications
+{{baseUrl}}/publications
 ```
 ### Post a publication
 Yo need to be logged in to make a new publication
@@ -45,7 +46,7 @@ Example:
 ```
 ## Comments
 ### Add comment
-POST:
+POST
 ```
 {{baseUrl}}/publications/{{publicationId}}/comment
 ```
