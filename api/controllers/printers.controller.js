@@ -26,7 +26,7 @@ exports.createPrinters = (req, res) => {
 
 exports.deletePrinters = (req, res) => {
   PrintersModel
-    .deleteOne(req.body)
+    .deleteOne({ _id: req.body._id })
     .then(printer => {
       res.status(200).json(printer)
     })

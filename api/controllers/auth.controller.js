@@ -49,7 +49,7 @@ exports.login = (req, res) => {
       if (user) {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (!result) {
-            return res.json({ error: `Wrong email or password` })
+            return res.json({ error: 'Wrong email or password' })
           }
           const user_data = { name: user.name, email: user.email }
 

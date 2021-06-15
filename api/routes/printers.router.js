@@ -9,6 +9,6 @@ const {
 
 printersRouter.get('/', checkAuth, getAllPrinters)
 printersRouter.post('/', checkAuth, createPrinters)
-printersRouter.delete('/', checkAuth, deletePrinters)
+printersRouter.delete('/delete', checkAuth, deletePrinters)
 
 exports.printersRouter = printersRouter
