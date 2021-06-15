@@ -12,7 +12,7 @@ const userPublicationSchema = new mongoose.Schema({
       type: String
     }
   },
-  comments: {
+  comment: {
     type: Array,
     items: {
       type: mongoose.Types.ObjectId,
@@ -21,6 +21,23 @@ const userPublicationSchema = new mongoose.Schema({
   },
   report: {
     type: Number
+  },
+  type: {
+    String,
+    enum: ['user', 'seller']
+  },
+  seller: {
+    pubicationRate: {
+      type: Number
+    },
+    product: [{
+      type: mongoose.Types.ObjectId,
+      ref: 'designProducts'
+    }],
+    service: [{
+      type: mongoose.Types.ObjectId,
+      ref: 'printServices'
+    }]
   }
 })
 

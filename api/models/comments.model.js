@@ -14,7 +14,7 @@ const commentSchema = new mongoose.Schema({
     max: 5,
     required: [true, 'Rate is required']
   },
-  reports: {
+  report: {
     type: Number
   }
 })

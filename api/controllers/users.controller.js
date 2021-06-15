@@ -40,7 +40,6 @@ exports.userTimeline = (req, res) => {
   console.log(res.locals.user.follows)
   UserModel
     .find({ _id: { $in: res.locals.user.follows } })
-    //.populate('publications')
     .then(users => {
       console.log(users)
     })
@@ -50,10 +49,10 @@ exports.userTimeline = (req, res) => {
 }
 
 exports.followUser = (req, res) => {
-  if (!res.locals.user.follows.includes(req.params.userid)) {
-    res.locals.user.follows.push(req.params.userid)
+  if (!res.locals.user.follow.includes(req.params.userid)) {
+    res.locals.user.follow.push(req.params.userid)
   } else {
-    res.locals.user.follows.remove(req.params.userid)
+    res.locals.user.follow.remove(req.params.userid)
   }
   res.locals.user
     .save()
@@ -61,10 +60,10 @@ exports.followUser = (req, res) => {
       UserModel
         .findById(req.params.userid)
         .then(followed => {
-          if (!followed.followers.includes(user.id)) {
-            followed.followers.push(user.id)
+          if (!followed.follower.includes(user.id)) {
+            followed.follower.push(user.id)
           } else {
-            followed.followers.remove(user.id)
+            followed.follower.remove(user.id)
           }
           followed.save()
         })

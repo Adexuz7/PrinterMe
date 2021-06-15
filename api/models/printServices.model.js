@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
-const designProductSchema = new mongoose.Schema({
-  Title: {
+const printServiceSchema = new mongoose.Schema({
+  title: {
     type: String,
     required: [true, 'Title is required']
   },
@@ -14,16 +14,17 @@ const designProductSchema = new mongoose.Schema({
     type: Number,
     required: [true, 'Price is required']
   },
-  tags: [{
-    type: String
+  printer: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'printers'
   }],
   type: {
     type: String,
     enum: ['Collectables', 'Technical']
   },
-  imagen: [{
+  image: [{
     type: String
   }]
 })
 
-exports.DesignProductModel = mongoose.model('designProducts', designProductSchema)
+exports.PrintServiceModel = mongoose.model('printServices', printServiceSchema)
