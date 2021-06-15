@@ -19,6 +19,17 @@ baseUrl = http://localhost:3000/api
 ```
 GET baseUrl/publications
 ```
+### Post a publication
+Yo need to be loged in to make a new publication
+```
+POST baseUrl/publications
+```
+Request body example:
+```
+{
+    "description": "This is a test publication"
+}
+```
 # Usage
 
 As every Social Media, you're going to have a Profile with a follow/follower system, a Timeline to be always wondered by the publications and comments of your followed users, an Explore site to watch new publications of random people and Groups, to make great communities to support you in case of any doubt you would have.
