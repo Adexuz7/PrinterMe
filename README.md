@@ -14,6 +14,21 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 ```
 baseUrl = http://localhost:3000/api
 ```
+## Sign up
+POST
+```
+{{baseUrl}}/auth/signup
+```
+Example:
+```
+{
+    "name": "Ganondorf Dragmire",
+    "username": "ganon",
+    "password": "disrespect",
+    "email": "ganon@hyrule.com",
+    "phone": 123456789
+}
+```
 ## Login
 ```
 {{baseUrl}}/auth/login
