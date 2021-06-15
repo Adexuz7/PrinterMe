@@ -25,7 +25,7 @@ exports.signup = (req, res) => {
             const token = jwt.sign(
               user_data,
               process.env.SECRET, // TODO SECRET MORE SECRET PLEASE
-              { expiresIn: '1h' }
+              { expiresIn: '7d' }
             )
             return res.json({ token: token, ...user_data })
           })
