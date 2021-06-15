@@ -32,12 +32,11 @@ exports.createUser = (req, res) => {
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ err: 'Error' })
+      res.status(500).json(err)
     })
 }
 
 exports.userTimeline = (req, res) => {
-  console.log(res.locals.user.follows)
   UserModel
     .find({ _id: { $in: res.locals.user.follows } })
     .then(users => {

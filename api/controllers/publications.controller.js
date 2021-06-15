@@ -14,14 +14,12 @@ exports.getAllUsersPublications = (req, res) => {
 }
 
 exports.createUserPublication = (req, res) => {
-  console.log(req.body)
   PublicationsModel
     .create(req.body)
     .then(publication => {
       res.status(200).json(publication)
-
       UserModel
-        .findById(req.body.userId)
+        .findById(req.body.userid)
         .then(user => {
           user.publications.push(publication.id) // Add publication ref to user publications
           user.save() // Save changes to db

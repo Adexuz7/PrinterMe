@@ -7,6 +7,6 @@ const {
 } = require('../controllers/publications.controller')
 
 PublicationsRouter.get('/', checkAuth, getAllUsersPublications)
-PublicationsRouter.post('/', createUserPublication)
+PublicationsRouter.post('/', checkAuth, createUserPublication)
 
 exports.PublicationsRouter = PublicationsRouter

@@ -1,9 +1,13 @@
 const mongoose = require('mongoose')
 
 const publicationSchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Types.ObjectId,
-    required: true
+  userid: {
+    type: mongoose.Types.ObjectId
+  },
+  title: {
+    type: String,
+    max: 30,
+    required: [true, 'You have to put a title']
   },
   description: {
     type: String,

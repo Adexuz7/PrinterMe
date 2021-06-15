@@ -16,8 +16,16 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: [true, 'Email is required'],
-    unique: [true, 'This email already exists']
+    trim: true,
+    lowercase: true,
+    unique: true,
+    validate: {
+      validator: function (v) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v)
+      },
+      message: 'Please enter a valid email'
+    },
+    required: [true, 'Email required']
   },
   phone: {
     type: Number,

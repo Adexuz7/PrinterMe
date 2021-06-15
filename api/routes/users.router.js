@@ -12,8 +12,8 @@ const {
 userRouter
   .get('/', checkAuth, getAllUsers)
   .get('/timeline', checkAuth, userTimeline)
-  .get('/:userid', getUser)
-  .post('/', createUser)
+  .get('/:userid', checkAuth, getUser)
+  .post('/', checkAuth, createUser)
   .put('/:userid', checkAuth, followUser)
 
 exports.userRouter = userRouter
