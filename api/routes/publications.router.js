@@ -12,8 +12,8 @@ const {
 
 PublicationsRouter.get('/', checkAuth, getAllPublications)
 PublicationsRouter.post('/', checkAuth, createPublication)
-PublicationsRouter.get('/:publication/comment', checkAuth, getAllComments)
-PublicationsRouter.post('/:publication/comment', checkAuth, addComment)
+PublicationsRouter.get('/:publication/comments', checkAuth, getAllComments)
+PublicationsRouter.post('/:publication/comments', checkAuth, addComment)
 
 PublicationsRouter.delete('/:publication/', checkAuth, deletePublication)
 PublicationsRouter.delete('/:publication/:comment', checkAuth, deleteComment)
