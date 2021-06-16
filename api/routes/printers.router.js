@@ -11,8 +11,9 @@ const {
   deletePrinters
 } = require('../controllers/printers.controller')
 
-printersRouter.get('/', checkAuth, getAllPrinters)
-printersRouter.post('/', checkAuth, isAdmin, createPrinters)
-printersRouter.delete('/delete', checkAuth, deletePrinters)
+printersRouter
+  .get('/', checkAuth, getAllPrinters)
+  .post('/', checkAuth, isAdmin, createPrinters)
+  .delete('/delete', checkAuth, deletePrinters)
 
 exports.printersRouter = printersRouter

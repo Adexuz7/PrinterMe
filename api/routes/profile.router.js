@@ -8,6 +8,6 @@ const {
 
 profileRouter
   .get('/', checkAuth, getUserData)
-  .patch('/', checkAuth, editUserData)
+  .put('/', checkAuth, editUserData)
 
 exports.profileRouter = profileRouter
