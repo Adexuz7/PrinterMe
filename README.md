@@ -42,13 +42,15 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/explore/filter/sellers/publications  |Yes    |USBAT filter the timeline in sellers' publications            |Only shows sellers' on the timeline   |
 
 ### Publications
-| METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS | 
-| --- | --- | --- | --- | --- |
+| METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS |
+| :---: | --- | :---: | --- | --- |
 | GET | /publications | Yes | USBAT see all publications | All publications |
 | POST | /publications |Yes | USBAT post a publication | Shows the publication you posted |
 | DELETE | /publications/:publication | Yes | USBAT delete your publication | Shows the publication you deleted |
 
 #### Publication comments
+| METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS |
+| :---: | --- | :---: | --- | --- |
 |GET     |/publications/:publication/comments             |Yes    |USBAT see all comments from a publication           |Shows the publications with their comments   |
 |POST    |/publications/:publication/comments             |Yes    |USBAT post a comment in a publication               |Shows the publications with their comments   |
 |DELETE  |/publications/:publication/:comment  |Yes    |USBAT delete your comment from a publication       |Shows the confirmation of your comment deleted   |
