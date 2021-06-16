@@ -55,14 +55,18 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/users/:userid                                    |Yes    |USBAT see the user's profile                        |Shows other user's profile   |
 |POST    |/users/comments                                   |Yes    |USBAT post a comment in a publication               |Shows the comment you did on the publication   |
 |GET     |/users/:userid/gallery                            |Yes    |USBAT see the user's gallery of images              |Shows other user's images posted   |
-|GET     |/users/pay/products/:productid                    |Yes    |USBAT can buy a product/service                     |Shows the sale created   |
+|GET     |/users/pay/products/:productid                    |Yes    |USBAT buy a product/service                         |Shows the sale created   |
 |PUT     |/users/:userid                                    |Yes    |USBAT follow or unfollow other user                 |Shows the user you follow or unfollow   |
 |POST    |/publications                                     |Yes    |USBAT create a publication                          |Shows the publication you posted   |
-|GET     |/publications/:publicationid/comments             |Yes    |USBAT can see all comments from a publication       |Shows the publications with their comments   |
-|POST    |/publications/:publicationid/comments             |Yes    |USBAT can post a comment in a publication           |Shows the publications with their comments   |
-|DELETE  |/publications/:publicationid/comments/:commentid  |Yes    |USBAT can delete their comment from a publication   |Shows the confirmation of your comment deleted   |
-|GET      |/profile                                         |Yes    |USBAT can see their own profile                     |Shows the data of the user   |
-|GET      |/profile                                         |Yes    |USBAT can see their own profile                     |Shows the data of the user   |
+|GET     |/publications/:publicationid/comments             |Yes    |USBAT see all comments from a publication           |Shows the publications with their comments   |
+|POST    |/publications/:publicationid/comments             |Yes    |USBAT post a comment in a publication               |Shows the publications with their comments   |
+|DELETE  |/publications/:publicationid/comments/:commentid  |Yes    |USBAT delete their comment from a publication       |Shows the confirmation of your comment deleted   |
+|GET      |/profile                                         |Yes    |USBAT see their own profile                         |Shows the data of the user   |
+|PUT      |/profile                                         |Yes    |USBAT change their own profile                      |Shows the data of the user modified  |
+|PUT      |/printers                                        |Yes    |USBAT add a printer to their profile                |Shows the data of the user modified  |
+|DELETE   |/printers                                        |Yes    |USBAT remove a printer to their profile             |Shows the data of the user modified  |
+|GET      |/printers                                        |Yes    |USBAT see all printers of the database              |Shows all the printers  |
+|GET      |/history                                         |Yes    |USBAT see all the sales he made                     |Shows a list of all the sales of their products/services  |
 
 ## Sign up
 POST
