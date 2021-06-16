@@ -17,8 +17,8 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
 | :----: | --------------- | :---: | --------------------------         | --------------------- |
 |GET     |/users           |Yes    |ASBAT see users list                |All the users in the platform   |
-|POST    |/printers        |Yes    |ASBAT add a printer to DB           |JSON  Object of the printer added   |
-|POST    |/printers/delete |Yes    |ASBAT delete a printer to DB        |JSON  Object of the printer deleted data   |
+|POST    |/printers        |Yes    |ASBAT add a printer to DB           |Confirmation of the printer added   |
+|POST    |/printers/delete |Yes    |ASBAT delete a printer to DB        |Confirmation of the printer deleted data   |
 
 ### Authentication
 |METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
@@ -49,16 +49,20 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |A new user account   |
 
 ### Users
-|METHOD  |ENDPOINT                         |TOKEN  |DESCRIPTION                             |RETURNS                | 
-| :----: | ---------------                 | :---: | ------------------------------         | --------------------- |
-|GET     |/users/timeline                  |Yes    |USBAT see the user's timeline           |Shows publications and comments of followed users   |
-
-|GET     |/users/:userid                   |Yes    |USBAT see the user's profile            |Shows other user's profile   |
-|POST    |/users/comments                  |Yes    |USBAT post a comment in a publication   |Shows the comment you did on the publication   |
-|GET     |/users/:userid/gallery           |Yes    |USBAT see the user's gallery of images  |Shows other user's images posted   |
-|GET     |/users/pay/products/:productid   |Yes    |USBAT can buy a product/service         |Shows the sale created   |
-|PUT     |/users/:userid                   |Yes    |USBAT follow or unfollow other user     |Shows the user you follow or unfollow   |
-|POST    |/users/comments                  |Yes    |USBAT post a comment in a publication   |Shows the comment you did on the publication   |
+|METHOD  |ENDPOINT                                          |TOKEN  |DESCRIPTION                                         |RETURNS                | 
+| :----: | ---------------                                  | :---: | ------------------------------                     | --------------------- |
+|GET     |/users/timeline                                   |Yes    |USBAT see the user's timeline                       |Shows publications and comments of followed users   |
+|GET     |/users/:userid                                    |Yes    |USBAT see the user's profile                        |Shows other user's profile   |
+|POST    |/users/comments                                   |Yes    |USBAT post a comment in a publication               |Shows the comment you did on the publication   |
+|GET     |/users/:userid/gallery                            |Yes    |USBAT see the user's gallery of images              |Shows other user's images posted   |
+|GET     |/users/pay/products/:productid                    |Yes    |USBAT can buy a product/service                     |Shows the sale created   |
+|PUT     |/users/:userid                                    |Yes    |USBAT follow or unfollow other user                 |Shows the user you follow or unfollow   |
+|POST    |/publications                                     |Yes    |USBAT create a publication                          |Shows the publication you posted   |
+|GET     |/publications/:publicationid/comments             |Yes    |USBAT can see all comments from a publication       |Shows the publications with their comments   |
+|POST    |/publications/:publicationid/comments             |Yes    |USBAT can post a comment in a publication           |Shows the publications with their comments   |
+|DELETE  |/publications/:publicationid/comments/:commentid  |Yes    |USBAT can delete their comment from a publication   |Shows the confirmation of your comment deleted   |
+|GET      |/profile                                         |Yes    |USBAT can see their own profile                     |Shows the data of the user   |
+|GET      |/profile                                         |Yes    |USBAT can see their own profile                     |Shows the data of the user   |
 
 ## Sign up
 POST
