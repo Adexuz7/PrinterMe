@@ -69,8 +69,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET      |/printers                                        |Yes    |USBAT see all printers of the database              |Shows all the printers  |
 |GET      |/history                                         |Yes    |USBAT see all the sales he made                     |Shows a list of all the sales of their products/services  |
 
-## Sign up
-POST
+## Sign up (POST)
 ```
 {{baseUrl}}/auth/signup
 ```
@@ -84,9 +83,9 @@ Example:
     "phone": 123456789
 }
 ```
-## Login
+## Login (POST)
 ```
-{{baseUrl}}/auth/login
+/auth/login
 ```
 ```
 {
@@ -95,16 +94,14 @@ Example:
 }
 ```
 ## Profile
-### Get your profile
-GET
+### GET your profile
 ```
-{{baseUrl}}/profile
+/profile
 ```
 
-### Edit profile
-Edit your user profile with PATCH
+### Update your profile (PUT)
 ```
-{{baseUrl}}/profile
+/profile
 ```
 Example:
 ```
@@ -115,13 +112,11 @@ Example:
 
 ## Publications
 
-### Get all publications
-GET
+### GET all publications
 ```
-{{baseUrl}}/publications
+/publications
 ```
 ### POST a publication
-Yo need to be logged in to make a new publication
 ```
 /publications
 ```
