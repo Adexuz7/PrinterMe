@@ -42,10 +42,11 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/explore/filter/sellers/publications  |Yes    |USBAT filter the timeline in sellers' publications            |Only shows sellers' on the timeline   |
 
 ### Groups
-|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
-| ------ | --------------- | ----- | --------------------------         | --------------------- |
-|POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
-|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
+|METHOD  |ENDPOINT                      |TOKEN  |DESCRIPTION                             |RETURNS                | 
+| ------ | ---------------------------- | ----- | -------------------------------------- | --------------------- |
+|POST    |/groups                       |Yes    |USBAT create a new group                |A new user account   |
+|GET     |/groups/:groupid              |Yes    |USBAT navigate on group timeline        |The user data   |
+|POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |A new user account   |
 
 ### Users
 |METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
