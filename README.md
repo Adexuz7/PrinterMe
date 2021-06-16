@@ -31,18 +31,15 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 ### Explore
 |METHOD  |ENDPOINT                              |TOKEN  |DESCRIPTION                                                   |RETURNS                | 
 | ------ | ------------------------------------ | ----- | ------------------------------------------------------------ | --------------------- |
-|GET     |/explore                              |No     |USBAT see random user's publications                          |a list of publications chronologically ordered   |
-|GET     |/explore/search?query=word            |Yes    |USBAT search for a specific word                              |The user data   |
-|GET     |/explore/filter/materials             |Yes    |USBAT filter the timeline in printer's materials impresions   |The user data   |
-|GET     |/explore/filter/printers              |Yes    |USBAT filter the timeline in printer's models                 |The user data   |
-|GET     |/explore/filter/collectables          |Yes    |USBAT filter the timeline in collectables designs             |The user data   |
-|GET     |/explore/filter/technics              |Yes    |USBAT filter the timeline in technics designs                 |The user data   |
-|GET     |/explore/filter/publications          |Yes    |USBAT filter the timeline with only publications              |The user data   |
-|GET     |/explore/filter/sellers               |Yes    |USBAT filter the timeline in sellers                          |The user data   |
-|GET     |/explore/filter/sellers/publications  |Yes    |USBAT filter the timeline in sellers' publications             |The user data   |
-
-|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
-|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
+|GET     |/explore                              |No     |USBAT see random user's publications                          |A list of random publications chronologically ordered   |
+|GET     |/explore/search?query=word            |Yes    |USBAT search for a specific word                              |A list of publications with contains the word in their value "tag"   |
+|GET     |/explore/filter/materials             |Yes    |USBAT filter the timeline in printer's materials impresions   |A list of seller's publications with printers can use this specific material   |
+|GET     |/explore/filter/printers              |Yes    |USBAT filter the timeline in printer's models                 |A list of seller's publications that works with this specific printer   |
+|GET     |/explore/filter/collectables          |Yes    |USBAT filter the timeline in collectables designs             |A list of seller's publication that designs have collectables purposes   |
+|GET     |/explore/filter/technics              |Yes    |USBAT filter the timeline in technics designs                 |A list of seller's publication that designs have technics purposes   |
+|GET     |/explore/filter/publications          |Yes    |USBAT filter the timeline with only publications              |Only shows publications on the timeline   |
+|GET     |/explore/filter/sellers               |Yes    |USBAT filter the timeline in sellers                          |Only shows sellers on the timeline   |
+|GET     |/explore/filter/sellers/publications  |Yes    |USBAT filter the timeline in sellers' publications            |Only shows sellers' on the timeline   |
 
 ### Groups
 |METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
