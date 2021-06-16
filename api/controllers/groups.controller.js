@@ -1,22 +1,19 @@
+const mongoose = require('mongoose')
 const { GroupsModel } = require('../models/groups.model')
 const { PublicationsModel } = require('../models/publications.model')
 
 exports.getAllGroupPublications = (req, res) => {
   GroupsModel
     .findById(req.params.groupId)
-    .then(group => {
-      res.status(200).json(group.groupPublications)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .populate('groupPublications')
+    .then(group => res.status(200).json(group.groupPublications))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.createGroup = (req, res) => {
   console.log(req.body)
   GroupsModel
-    .create(req.body)
+    .create({ moderator: res.locals.user.id, ...req.body })
     .then(group => {
       res.status(200).json(group)
     })
@@ -31,13 +28,13 @@ exports.createGroupPublication = (req, res) => {
   PublicationsModel
     .create(req.body)
     .then(publication => {
-      res.locals.user.publication.push(publication.id)
+      res.locals.user.publication.push(mongoose.Types.ObjectId(publication.id))
       res.locals.user.save()
 
       GroupsModel
         .findById(req.params.groupId)
         .then(group => {
-          group.groupPublications.push(publication.id)
+          group.groupPublications.push(mongoose.Types.ObjectId(publication.id))
           group.save()
           res.status(200).json(publication)
         })
