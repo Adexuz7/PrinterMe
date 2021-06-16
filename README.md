@@ -50,10 +50,10 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 #### Publication comments
 | METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS |
-| :---: | --- | :---: | --- | --- |
-|GET     |/publications/:publication/comments             |Yes    |USBAT see all comments from a publication           |Shows the publications with their comments   |
-|POST    |/publications/:publication/comments             |Yes    |USBAT post a comment in a publication               |Shows the publications with their comments   |
-|DELETE  |/publications/:publication/:comment  |Yes    |USBAT delete your comment from a publication       |Shows the confirmation of your comment deleted   |
+| :---: | :--- | :---: | :--- | :--- |
+| GET | /publications/:publication/comments | Yes | USBAT see all comments from a publication | Shows the publications with it's comments |
+| POST | /publications/:publication/comments | Yes |USBAT post a comment in a publication | Shows the publications with it's comments |
+| DELETE | /publications/:publication/:comment | Yes | USBAT delete your comment from a publication | Shows the publications with it's comments |
 
 ### Groups
 |METHOD  |ENDPOINT                      |TOKEN  |DESCRIPTION                             |RETURNS                | 
