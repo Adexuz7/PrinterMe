@@ -1,5 +1,7 @@
 const { UserModel } = require('../models/users.model')
 
+// var ObjectId = require('mongoose').Types.ObjectId;
+
 exports.getAllUsers = (req, res) => {
   UserModel
     .find()
@@ -32,12 +34,25 @@ exports.createUser = (req, res) => {
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ err: 'Error' })
+      res.status(500).json(err)
+    })
+}
+
+exports.deleteUser = (req, res) => {
+  console.log(res.locals.user)
+  UserModel
+    .deleteOne({ _id: res.locals.user._id })
+    .then(user => {
+      console.log('user: ', user)
+      res.status(200).json(user)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json(err)
     })
 }
 
 exports.userTimeline = (req, res) => {
-  console.log(res.locals.user.follows)
   UserModel
     .find({ _id: { $in: res.locals.user.follows } })
     .then(users => {
@@ -67,6 +82,46 @@ exports.followUser = (req, res) => {
           }
           followed.save()
         })
+      res.status(200).json(user)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
+
+exports.getAllSellers = (req, res) => {
+  UserModel
+    .find({ role: 'seller' })
+
+    .then(sellers => {
+      console.log(sellers)
+      res.json(sellers)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
+
+exports.addUserPrinter = (req, res) => {
+  res.locals.user.seller.printer.push(req.body.printerId)
+  res.locals.user
+    .save()
+    .then(user => {
+      res.status(200).json(user)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
+
+exports.removeUserPrinter = (req, res) => {
+  res.locals.user.seller.printer.remove(req.body.printerId)
+  res.locals.user
+    .save()
+    .then(user => {
       res.status(200).json(user)
     })
     .catch(err => {

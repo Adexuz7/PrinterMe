@@ -1,35 +1,56 @@
 const mongoose = require('mongoose')
 
-const userPublicationSchema = new mongoose.Schema({
+// Comments
+const commentSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Types.ObjectId,
+    required: true
+  },
+  description: {
+    type: String,
+    required: [true, 'Comment description is required'],
+    max: 300
+  },
+  rate: {
+    type: Number,
+    required: [true, 'Rate is required'],
+    max: 5,
+    min: 0
+  },
+  image: [String],
+  report: Number,
+  date: Date
+})
+
+// Publications
+const publicationSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Types.ObjectId,
+    required: true
+  },
+  title: {
+    type: String,
+    max: 30,
+    required: [true, 'You have to put a title']
+  },
   description: {
     type: String,
     max: 300,
     required: [true, 'You have to put a description']
   },
-  image: {
-    type: Array,
-    items: {
-      type: String
-    }
-  },
-  comment: {
-    type: Array,
-    items: {
-      type: mongoose.Types.ObjectId,
-      ref: 'comments'
-    }
-  },
-  report: {
-    type: Number
-  },
+  image: [String],
+  comment: [commentSchema],
+  report: Number,
   type: {
     String,
     enum: ['user', 'seller']
   },
+  group: {
+    type: mongoose.Types.ObjectId,
+    ref: 'groups'
+  },
   seller: {
-    pubicationRate: {
-      type: Number
-    },
+    pubicationRate: Number,
     product: [{
       type: mongoose.Types.ObjectId,
       ref: 'designProducts'
@@ -37,8 +58,10 @@ const userPublicationSchema = new mongoose.Schema({
     service: [{
       type: mongoose.Types.ObjectId,
       ref: 'printServices'
-    }]
-  }
+    }],
+    tag: [String]
+  },
+  date: Date
 })
 
-exports.UserPublicationModel = mongoose.model('userPublications', userPublicationSchema)
+exports.PublicationsModel = mongoose.model('publications', publicationSchema)

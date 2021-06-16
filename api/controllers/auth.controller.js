@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const { UserModel } = require('../models/users.model')
 
 exports.signup = (req, res) => {
-  const hashed_pwd = bcrypt.hashSync(req.body.password, 10)
+  const hashedPwd = bcrypt.hashSync(req.body.password, 10)
   UserModel
     .findOne({ email: req.body.email })
     .then(user => {
@@ -15,23 +15,24 @@ exports.signup = (req, res) => {
           .create({
             name: req.body.name,
             username: req.body.username,
-            password: hashed_pwd,
+            password: hashedPwd,
             email: req.body.email,
-            phone: req.body.phone
+            phone: req.body.phone,
+            role: req.body.role
           })
           .then(user => {
-            const user_data = { email: user.email, role: user.role }
+            const userData = { email: user.email, role: user.role }
 
             const token = jwt.sign(
-              user_data,
+              userData,
               process.env.SECRET, // TODO SECRET MORE SECRET PLEASE
-              { expiresIn: '1h' }
+              { expiresIn: '7d' }
             )
-            return res.json({ token: token, ...user_data })
+            return res.json({ token: token, ...userData })
           })
           .catch(err => {
             console.log(err)
-            res.status(500).json({ msg: 'Error' })
+            res.status(500).json(err.message)
           })
       }
     })
@@ -45,19 +46,20 @@ exports.login = (req, res) => {
   UserModel
     .findOne({ email: req.body.email })
     .then(user => {
+      if (!user) res.status(404).send('User not found')
       if (user) {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (!result) {
-            return res.json({ error: `Wrong email or password` })
+            return res.json({ error: 'Wrong email or password' }, err)
           }
-          const user_data = { name: user.name, email: user.email }
+          const userData = { name: user.name, email: user.email }
 
           const token = jwt.sign(
-            user_data,
+            userData,
             process.env.SECRET,
             { expiresIn: '1h' }
           )
-          return res.json({ token: token, ...user_data })
+          return res.json({ token: token, ...userData })
         })
       }
     })
