@@ -36,7 +36,7 @@ exports.createPublication = (req, res) => {
     })
 }
 
-exports.editPublication = (req, res) => {
+exports.updatePublication = (req, res) => {
   PublicationsModel
     .findOneAndUpdate({ _id: req.params.publication }, req.body)
     .then(user => res.status(200).json({ msg: 'Publication updated' }))
