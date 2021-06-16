@@ -18,10 +18,6 @@ const printServiceSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: 'printers'
   }],
-  type: {
-    type: String,
-    enum: ['Collectables', 'Technical']
-  },
   image: [{
     type: String
   }]

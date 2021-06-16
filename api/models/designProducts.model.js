@@ -8,22 +8,21 @@ const designProductSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, 'Description is required'],
-    max: 500
+    max: 300
   },
   price: {
     type: Number,
     required: [true, 'Price is required']
   },
-  tag: [{
-    type: String
-  }],
   type: {
     type: String,
-    enum: ['Collectables', 'Technical']
+    enum: ['Collectable', 'Technical'],
+    required: [true, 'You should tell what type of product you are selling']
   },
   image: [{
     type: String
-  }]
+  }],
+  size: Number
 })
 
 exports.DesignProductModel = mongoose.model('designProducts', designProductSchema)
