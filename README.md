@@ -120,11 +120,10 @@ GET
 ```
 {{baseUrl}}/publications
 ```
-### Post a publication
+### POST a publication
 Yo need to be logged in to make a new publication
-POST
 ```
-{{baseUrl}}/publications
+/publications
 ```
 Example:
 ```
@@ -132,6 +131,10 @@ Example:
     "title": "Test publication",
     "description": "This is a test publication"
 }
+```
+### DELETE a publication
+```
+/publications/:publication
 ```
 ## Comments
 ### Get all comments
@@ -150,6 +153,10 @@ Example:
     "description": "This is a test comment",
     "rate": 4
 }
+```
+### DELETE a comment
+```
+/publications/:publication/:comment
 ```
 # Usage
 
