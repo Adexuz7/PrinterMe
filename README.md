@@ -46,6 +46,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 | :---: | :--- | :---: | :--- | :--- |
 | GET | /publications | Yes | USBAT see all publications | All publications |
 | POST | /publications |Yes | USBAT post a publication | Shows the publication you posted |
+| PUT | /publications/:publication | Yes | USBAT update a publication | Shows a confirmation message |
 | DELETE | /publications/:publication | Yes | USBAT delete your publication | Shows the publication you deleted |
 
 #### Publication comments
@@ -134,6 +135,17 @@ Example:
 {
     "title": "Test publication",
     "description": "This is a test publication"
+}
+```
+### Update a publication (PUT)
+```
+/publications/:publication
+```
+Example:
+```
+{
+    "title": "This is a EDITED publication",
+    "description": "This publication was edited"
 }
 ```
 ### DELETE a publication
