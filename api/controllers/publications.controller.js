@@ -39,7 +39,7 @@ exports.createPublication = (req, res) => {
 exports.updatePublication = (req, res) => {
   PublicationsModel
     .findOneAndUpdate({ _id: req.params.publication }, req.body)
-    .then(user => res.status(200).json({ msg: 'Publication updated' }))
+    .then(user => res.status(200).json('Publication updated'))
     .catch(err => res.status(500).json(err))
 }
 
