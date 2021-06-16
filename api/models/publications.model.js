@@ -59,7 +59,7 @@ const publicationSchema = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: 'printServices'
     }],
-    tag: [String]
+    tag: Array
   },
   date: Date
 })
