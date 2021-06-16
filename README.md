@@ -13,9 +13,10 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ## EndPoints
 
-|   METHOD    |     ENDPOINT    |    TOKEN    |       DESCRIPTION       |    RETURNS    | 
-|-------------|-----------------|-------------|-------------------------|---------------| 
-|     GET     |      /auth      |      No     |      USBAT sign up      |A new user account| 
+|   METHOD    |     ENDPOINT    |    TOKEN    |       DESCRIPTION       |       RETURNS      | 
+|-------------|-----------------|-------------|-------------------------|--------------------| 
+|     GET     |      /auth      |      No     |      USBAT sign up      | A new user account |
+|     GET     |      /auth      |      No     |      USBAT sign up      | A new user account | 
 
 
 ```
