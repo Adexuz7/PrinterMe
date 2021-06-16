@@ -1,7 +1,6 @@
 const authRouter = require('express').Router()
 const {
-  checkAuth,
-  isAdmin
+  checkAuth
 } = require('../../utils')
 
 const {
