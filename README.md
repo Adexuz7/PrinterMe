@@ -80,7 +80,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ## Sign up (POST)
 ```
-{{baseUrl}}/auth/signup
+/auth/signup
 ```
 Example:
 ```
