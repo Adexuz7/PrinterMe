@@ -26,7 +26,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
 |POST    |/auth/login      |No     |USBAT login                         |Access to the platform with your account   | 
 |DELETE  |/auth/delete     |Yes    |USBAT delete their accout           |A 'deleted account' message   | 
-|GET     |/auth/signup     |Yes    |USBAT check if it's logged in       |The user data   |
+|GET     |/auth/whoami     |Yes    |USBAT check if it's logged in       |The user data   |
 
 ### Explore
 |METHOD  |ENDPOINT                              |TOKEN  |DESCRIPTION                                                   |RETURNS                | 
