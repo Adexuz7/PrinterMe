@@ -37,12 +37,20 @@ exports.createPublication = (req, res) => {
 }
 
 exports.deletePublication = (req, res) => {
-  // TO DO
   const user = res.locals.user
   const request = req.params
 
-  console.log('USR', user)
-  console.log('REQ', request)
+  PublicationsModel
+    .findById(request.publication)
+    .then(publication => {
+      if (publication.userId.toString() === user.id || user.permit === 'admin') {
+        PublicationsModel
+          .findByIdAndDelete(publication.id)
+          .then(publication => res.status(200).json(publication))
+          .catch(err => res.status(500).json(err))
+      }
+    })
+    .catch(err => res.status(500).json(err))
 }
 
 // Comments
