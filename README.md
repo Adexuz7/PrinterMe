@@ -137,15 +137,13 @@ Example:
 /publications/:publication
 ```
 ## Comments
-### Get all comments
-GET
+### GET all comments
 ```
-{{baseUrl}}/publications/{{publicationId}}/comment
+/publications/:publication/comments
 ```
-### Add comment
-POST
+### POST a comment
 ```
-{{baseUrl}}/publications/{{publicationId}}/comment
+/publications/:publication/comments
 ```
 Example:
 ```
