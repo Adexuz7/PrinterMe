@@ -41,23 +41,24 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/explore/filter/sellers               |Yes    |USBAT filter the timeline in sellers                          |Only shows sellers on the timeline   |
 |GET     |/explore/filter/sellers/publications  |Yes    |USBAT filter the timeline in sellers' publications            |Only shows sellers' on the timeline   |
 
+### Publications
+| METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS | 
+| --- | --- | --- | --- | --- |
+| GET | /publications | Yes | USBAT see all publications | All publications |
+| POST | /publications |Yes | USBAT post a publication | Shows the publication you posted |
+| DELETE | /publications/:publication | Yes | USBAT delete your publication | Shows the publication you deleted |
+
+#### Publication comments
+|GET     |/publications/:publication/comments             |Yes    |USBAT see all comments from a publication           |Shows the publications with their comments   |
+|POST    |/publications/:publication/comments             |Yes    |USBAT post a comment in a publication               |Shows the publications with their comments   |
+|DELETE  |/publications/:publication/:comment  |Yes    |USBAT delete your comment from a publication       |Shows the confirmation of your comment deleted   |
+
 ### Groups
 |METHOD  |ENDPOINT                      |TOKEN  |DESCRIPTION                             |RETURNS                | 
 | :----: | ---------------------------- | :---: | -------------------------------------- | --------------------- |
 |POST    |/groups                       |Yes    |USBAT create a new group                |A new user account   |
 |GET     |/groups/:groupid              |Yes    |USBAT navigate on group timeline        |The user data   |
 |POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |A new user account   |
-
-
-### Publications
-|METHOD  |ENDPOINT                                          |TOKEN  |DESCRIPTION                                         |RETURNS                | 
-| :----: | ---------------                                  | :---: | ------------------------------                     | --------------------- |
-| GET | /publications | Yes | USBAT see all publications | All publications |
-|POST    |/publications                                     |Yes    |USBAT create a publication                          |Shows the publication you posted   |
-|GET     |/publications/:publication/comments             |Yes    |USBAT see all comments from a publication           |Shows the publications with their comments   |
-|POST    |/publications/:publication/comments             |Yes    |USBAT post a comment in a publication               |Shows the publications with their comments   |
-|DELETE  |/publications/:publication  |Yes    |USBAT delete your publication       |Shows the confirmation of your publication deleted   |
-|DELETE  |/publications/:publication/:comment  |Yes    |USBAT delete your comment from a publication       |Shows the confirmation of your comment deleted   |
 
 ### Users
 |METHOD  |ENDPOINT                                          |TOKEN  |DESCRIPTION                                         |RETURNS                | 
