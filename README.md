@@ -13,10 +13,10 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ## EndPoints
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+|   METHOD    |     ENDPOINT    |    TOKEN    |       DESCRIPTION       |    RETURNS    | 
+|-------------|-----------------|-------------|-------------------------|---------------| 
+|     GET     |      /auth      |      No     |      USBAT sign up      |A new user account| 
+
 
 ```
 baseUrl = http://localhost:3000/api
