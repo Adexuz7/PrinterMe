@@ -45,10 +45,6 @@ const publicationSchema = new mongoose.Schema({
     String,
     enum: ['user', 'seller']
   },
-  group: {
-    type: mongoose.Types.ObjectId,
-    ref: 'groups'
-  },
   seller: {
     pubicationRate: Number,
     product: [{
