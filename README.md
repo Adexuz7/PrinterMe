@@ -84,7 +84,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 /auth/signup
 ```
 Example:
-```
+```json
 {
     "name": "Ganondorf Dragmire",
     "username": "ganon",
@@ -97,7 +97,7 @@ Example:
 ```
 /auth/login
 ```
-```
+```json
 {
     "email": "example@example.com",
     "password": "example"
@@ -114,7 +114,7 @@ Example:
 /profile
 ```
 Example:
-```
+```json
 {
     "phone": 123456789
 }
@@ -131,7 +131,7 @@ Example:
 /publications
 ```
 Example:
-```
+```json
 {
     "title": "Test publication",
     "description": "This is a test publication"
@@ -142,7 +142,7 @@ Example:
 /publications/:publication
 ```
 Example:
-```
+```json
 {
     "title": "This is a EDITED publication",
     "description": "This publication was edited"
@@ -162,7 +162,7 @@ Example:
 /publications/:publication/comments
 ```
 Example:
-```
+```json
 {
     "description": "This is a test comment",
     "rate": 4
