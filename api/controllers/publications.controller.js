@@ -1,5 +1,7 @@
 const { PublicationsModel } = require('../models/publications.model')
 
+// Publications
+
 exports.getAllPublications = (req, res) => {
   PublicationsModel
     .find()
@@ -34,6 +36,17 @@ exports.createPublication = (req, res) => {
     })
 }
 
+exports.deletePublication = (req, res) => {
+  // TO DO
+  const user = res.locals.user
+  const request = req.params
+
+  console.log('USR', user)
+  console.log('REQ', request)
+}
+
+// Comments
+
 exports.getAllComments = (req, res) => {
   PublicationsModel
     .findById(req.params.publication)
@@ -64,4 +77,36 @@ exports.addComment = (req, res) => {
         .catch(err => console.log(err))
     })
     .catch(err => res.status(500).json(err))
+}
+
+exports.deleteComment = (req, res) => {
+  const user = res.locals.user
+  const request = req.params
+
+  PublicationsModel
+    .findById(request.publication)
+    .then(publication => {
+      const comments = publication.comment
+      const commentIndex = findWithAttr(comments, 'id', request.comment)
+      const commentToDelete = comments[commentIndex]
+
+      if (commentToDelete !== undefined) {
+        if (commentToDelete.userId.toString() === user.id || user.permit === 'admin') {
+          comments.splice(commentIndex, 1)
+        }
+      }
+
+      publication
+        .save()
+        .then(publication => res.status(200).json(publication))
+        .catch(err => res.status(500).json(err))
+    })
+    .catch(err => res.status(500).json(err))
+}
+
+function findWithAttr (array, attr, value) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][attr] === value) return i
+  }
+  return -1
 }
