@@ -1,4 +1,5 @@
 const printersRouter = require('express').Router()
+
 const {
   checkAuth,
   isAdmin

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const publicationSchema = new mongoose.Schema({
-  userid: {
+  userId: {
     type: mongoose.Types.ObjectId
   },
   title: {
