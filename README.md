@@ -43,7 +43,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ### Publications
 | METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS |
-| :---: | --- | :---: | --- | --- |
+| :---: | :--- | :---: | :--- | :--- |
 | GET | /publications | Yes | USBAT see all publications | All publications |
 | POST | /publications |Yes | USBAT post a publication | Shows the publication you posted |
 | DELETE | /publications/:publication | Yes | USBAT delete your publication | Shows the publication you deleted |
