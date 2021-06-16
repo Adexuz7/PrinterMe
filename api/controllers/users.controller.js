@@ -1,5 +1,7 @@
 const { UserModel } = require('../models/users.model')
 
+// var ObjectId = require('mongoose').Types.ObjectId;
+
 exports.getAllUsers = (req, res) => {
   UserModel
     .find()
@@ -95,6 +97,32 @@ exports.getAllSellers = (req, res) => {
     .then(sellers => {
       console.log(sellers)
       res.json(sellers)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
+
+exports.addUserPrinter = (req, res) => {
+  res.locals.user.seller.printer.push(req.body.printerId)
+  res.locals.user
+    .save()
+    .then(user => {
+      res.status(200).json(user)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
+
+exports.removeUserPrinter = (req, res) => {
+  res.locals.user.seller.printer.remove(req.body.printerId)
+  res.locals.user
+    .save()
+    .then(user => {
+      res.status(200).json(user)
     })
     .catch(err => {
       console.log(err)

@@ -1,8 +1,32 @@
 const mongoose = require('mongoose')
 
+// Comments
+const commentSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Types.ObjectId,
+    required: true
+  },
+  description: {
+    type: String,
+    required: [true, 'Comment description is required'],
+    max: 300
+  },
+  rate: {
+    type: Number,
+    required: [true, 'Rate is required'],
+    max: 5,
+    min: 0
+  },
+  image: [String],
+  report: Number,
+  date: Date
+})
+
+// Publications
 const publicationSchema = new mongoose.Schema({
   userId: {
-    type: mongoose.Types.ObjectId
+    type: mongoose.Types.ObjectId,
+    required: true
   },
   title: {
     type: String,
@@ -14,42 +38,15 @@ const publicationSchema = new mongoose.Schema({
     max: 300,
     required: [true, 'You have to put a description']
   },
-  image: {
-    type: Array,
-    items: {
-      type: String
-    }
-  },
-  comment: [{
-    description: {
-      type: String,
-      max: 300,
-      required: [true, 'Comment description is required']
-    },
-    rate: {
-      type: Number,
-      min: 0,
-      max: 5,
-      required: [true, 'Rate is required']
-    },
-    image: [{
-      type: String
-    }],
-    report: {
-      type: Number
-    }
-  }],
-  report: {
-    type: Number
-  },
+  image: [String],
+  comment: [commentSchema],
+  report: Number,
   type: {
     String,
     enum: ['user', 'seller']
   },
   seller: {
-    pubicationRate: {
-      type: Number
-    },
+    pubicationRate: Number,
     product: [{
       type: mongoose.Types.ObjectId,
       ref: 'designProducts'
@@ -58,10 +55,9 @@ const publicationSchema = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: 'printServices'
     }],
-    tag: [{
-      type: String
-    }]
-  }
+    tag: [String]
+  },
+  date: Date
 })
 
 exports.PublicationsModel = mongoose.model('publications', publicationSchema)

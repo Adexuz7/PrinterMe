@@ -14,7 +14,10 @@ exports.getAllPublications = (req, res) => {
 
 exports.createPublication = (req, res) => {
   const user = res.locals.user
-  req.body.userId = user._id // Add userid to request body
+  const request = req.body
+
+  request.userId = user._id // Add userId
+  request.date = new Date() // Add date
 
   PublicationsModel
     .create(req.body)
@@ -42,6 +45,10 @@ exports.getAllComments = (req, res) => {
 
 exports.addComment = (req, res) => {
   const user = res.locals.user
+  const request = req.body
+
+  request.userId = user._id // Add userId
+  request.date = new Date() // Add date
 
   PublicationsModel
     .findById(req.params.publication)
