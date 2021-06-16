@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 
 const publicationSchema = new mongoose.Schema({
-  userid: {
-    type: mongoose.Types.ObjectId
+  userId: {
+    type: mongoose.Types.ObjectId,
+    required: true
   },
   title: {
     type: String,
@@ -21,6 +22,10 @@ const publicationSchema = new mongoose.Schema({
     }
   },
   comment: [{
+    userId: {
+      type: mongoose.Types.ObjectId,
+      required: true
+    },
     description: {
       type: String,
       max: 300,
@@ -37,7 +42,8 @@ const publicationSchema = new mongoose.Schema({
     }],
     report: {
       type: Number
-    }
+    },
+    date: Date
   }],
   report: {
     type: Number
@@ -61,7 +67,8 @@ const publicationSchema = new mongoose.Schema({
     tag: [{
       type: String
     }]
-  }
+  },
+  date: Date
 })
 
 exports.PublicationsModel = mongoose.model('publications', publicationSchema)
