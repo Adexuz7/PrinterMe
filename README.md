@@ -11,6 +11,13 @@ You have to install all the npm packages ```$npm install``` from your console to
 
 Actually PrinterMe is developed to be a Back-end project, so it's not going to have a Front. By the way, you can use it installing all the npm packages and doing all the request in Postman.
 
+## EndPoints
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 ```
 baseUrl = http://localhost:3000/api
 ```
