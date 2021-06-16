@@ -52,6 +52,31 @@ exports.createGroupPublication = (req, res) => {
     })
 }
 
+exports.deleteGroupPublication = (req, res) => {
+  PublicationsModel
+    .findByIdAndDelete(req.body._id)
+    .then(publication => {
+      res.locals.user.publication.remove(publication.id)
+      res.locals.user.save()
+
+      GroupsModel
+        .findById(req.params.groupId)
+        .then(group => {
+          group.groupPublications.remove(publication.id)
+          group.save()
+          res.status(200).json(publication)
+        })
+        .catch(err => {
+          console.log(err)
+          res.status(500).json({ err: 'Error' })
+        })
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
+
 exports.getAllGroups = (req, res) => {
   GroupsModel
     .find()
