@@ -13,12 +13,48 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ## EndPoints
 
-|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                 |RETURNS                | 
-| ------ | --------------- | ----- | -------------------------- | --------------------- |
-|GET     |/auth/signup     |No     |USBAT sign up               |A new user account   |
-|GET     |/auth/login      |No     |USBAT login                 |Access to the platform with your account   | 
-|DELETE  |/auth/delete     |Yes    |USBAT delete their accout   |A 'deleted account' message   | 
+### Admin
+|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
+| ------ | --------------- | ----- | --------------------------         | --------------------- |
+|GET     |/users           |Yes    |ASBAT see users list                |All the users in the platform   |
+|POST    |/printers        |Yes    |ASBAT add a printer to DB           |JSON  Object of the printer added   |
+|POST    |/printers/delete |Yes    |ASBAT delete a printer to DB        |JSON  Object of the printer deleted data   |
 
+### Authentication
+|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
+| ------ | --------------- | ----- | --------------------------         | --------------------- |
+|POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
+|POST    |/auth/login      |No     |USBAT login                         |Access to the platform with your account   | 
+|DELETE  |/auth/delete     |Yes    |USBAT delete their accout           |A 'deleted account' message   | 
+|GET     |/auth/signup     |Yes    |USBAT check if it's logged in       |The user data   |
+
+### Explore
+|METHOD  |ENDPOINT                              |TOKEN  |DESCRIPTION                                                   |RETURNS                | 
+| ------ | ------------------------------------ | ----- | ------------------------------------------------------------ | --------------------- |
+|GET     |/explore                              |No     |USBAT see random user's publications                          |a list of publications chronologically ordered   |
+|GET     |/explore/search?query=word            |Yes    |USBAT search for a specific word                              |The user data   |
+|GET     |/explore/filter/materials             |Yes    |USBAT filter the timeline in printer's materials impresions   |The user data   |
+|GET     |/explore/filter/printers              |Yes    |USBAT filter the timeline in printer's models                 |The user data   |
+|GET     |/explore/filter/collectables          |Yes    |USBAT filter the timeline in collectables designs             |The user data   |
+|GET     |/explore/filter/technics              |Yes    |USBAT filter the timeline in technics designs                 |The user data   |
+|GET     |/explore/filter/publications          |Yes    |USBAT filter the timeline with only publications              |The user data   |
+|GET     |/explore/filter/sellers               |Yes    |USBAT filter the timeline in sellers                          |The user data   |
+|GET     |/explore/filter/sellers/publications  |Yes    |USBAT filter the timeline in sellers' publications             |The user data   |
+
+|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
+|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
+
+### Groups
+|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
+| ------ | --------------- | ----- | --------------------------         | --------------------- |
+|POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
+|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
+
+### Users
+|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
+| ------ | --------------- | ----- | --------------------------         | --------------------- |
+|POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
+|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
 
 ## Sign up
 POST
