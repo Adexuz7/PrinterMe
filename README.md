@@ -48,6 +48,17 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/groups/:groupid              |Yes    |USBAT navigate on group timeline        |The user data   |
 |POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |A new user account   |
 
+
+### Publications
+|METHOD  |ENDPOINT                                          |TOKEN  |DESCRIPTION                                         |RETURNS                | 
+| :----: | ---------------                                  | :---: | ------------------------------                     | --------------------- |
+| GET | /publications | Yes | USBAT see all publications | All publications |
+|POST    |/publications                                     |Yes    |USBAT create a publication                          |Shows the publication you posted   |
+|GET     |/publications/:publication/comments             |Yes    |USBAT see all comments from a publication           |Shows the publications with their comments   |
+|POST    |/publications/:publication/comments             |Yes    |USBAT post a comment in a publication               |Shows the publications with their comments   |
+|DELETE  |/publications/:publication  |Yes    |USBAT delete your publication       |Shows the confirmation of your publication deleted   |
+|DELETE  |/publications/:publication/:comment  |Yes    |USBAT delete your comment from a publication       |Shows the confirmation of your comment deleted   |
+
 ### Users
 |METHOD  |ENDPOINT                                          |TOKEN  |DESCRIPTION                                         |RETURNS                | 
 | :----: | ---------------                                  | :---: | ------------------------------                     | --------------------- |
@@ -57,11 +68,6 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/users/:userid/gallery                            |Yes    |USBAT see the user's gallery of images              |Shows other user's images posted   |
 |GET     |/users/pay/products/:productid                    |Yes    |USBAT buy a product/service                         |Shows the sale created   |
 |PUT     |/users/:userid                                    |Yes    |USBAT follow or unfollow other user                 |Shows the user you follow or unfollow   |
-|POST    |/publications                                     |Yes    |USBAT create a publication                          |Shows the publication you posted   |
-|GET     |/publications/:publication/comments             |Yes    |USBAT see all comments from a publication           |Shows the publications with their comments   |
-|POST    |/publications/:publication/comments             |Yes    |USBAT post a comment in a publication               |Shows the publications with their comments   |
-|DELETE  |/publications/:publication  |Yes    |USBAT delete your publication       |Shows the confirmation of your publication deleted   |
-|DELETE  |/publications/:publication/:comment  |Yes    |USBAT delete your comment from a publication       |Shows the confirmation of your comment deleted   |
 |GET      |/profile                                         |Yes    |USBAT see their own profile                         |Shows the data of the user   |
 |PUT      |/profile                                         |Yes    |USBAT change their own profile                      |Shows the data of the user modified  |
 |PUT      |/printers                                        |Yes    |USBAT add a printer to their profile                |Shows the data of the user modified  |
