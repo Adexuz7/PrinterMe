@@ -36,6 +36,13 @@ exports.createPublication = (req, res) => {
     })
 }
 
+exports.editPublication = (req, res) => {
+  PublicationsModel
+    .findOneAndUpdate({ _id: req.params.publication }, req.body)
+    .then(user => res.status(200).json({ msg: 'Publication updated' }))
+    .catch(err => res.status(500).json(err))
+}
+
 exports.deletePublication = (req, res) => {
   const user = res.locals.user
   const request = req.params
