@@ -1,17 +1,17 @@
 const { GroupsModel } = require('../models/groups.model')
 const { PublicationsModel } = require('../models/publications.model')
 
-// exports.getAllUsersPublications = (req, res) => {
-//   PublicationsModel
-//     .find()
-//     .then(publications => {
-//       res.json(publications)
-//     })
-//     .catch(err => {
-//       console.log(err)
-//       res.status(500).json({ err: 'Error' })
-//     })
-// }
+exports.getAllGroupPublications = (req, res) => {
+  GroupsModel
+    .findById(req.params.groupId)
+    .then(group => {
+      res.status(200).json(group.groupPublications)
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
 
 exports.createGroup = (req, res) => {
   console.log(req.body)
@@ -54,7 +54,7 @@ exports.createGroupPublication = (req, res) => {
 
 exports.deleteGroupPublication = (req, res) => {
   PublicationsModel
-    .findByIdAndDelete(req.body._id)
+    .findByIdAndDelete(req.params.publicationId)
     .then(publication => {
       res.locals.user.publication.remove(publication.id)
       res.locals.user.save()
@@ -91,7 +91,7 @@ exports.getAllGroups = (req, res) => {
 
 exports.deleteGroups = (req, res) => {
   GroupsModel
-    .deleteOne({ _id: req.body._id })
+    .findByIdAndDelete(req.params.groupId)
     .then(group => {
       res.status(200).json(group)
     })

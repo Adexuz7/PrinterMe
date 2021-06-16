@@ -6,13 +6,15 @@ const {
   createGroupPublication,
   getAllGroups,
   deleteGroups,
-  deleteGroupPublication
+  deleteGroupPublication,
+  getAllGroupPublications
 } = require('../controllers/groups.controller')
 
 GroupsRouter.post('/', checkAuth, createGroup)
-GroupsRouter.post('/:groupId/publication', checkAuth, createGroupPublication)
+GroupsRouter.post('/:groupId/publications', checkAuth, createGroupPublication)
 GroupsRouter.get('/', checkAuth, getAllGroups)
-GroupsRouter.delete('/', checkAuth, deleteGroups)
-GroupsRouter.delete('/:groupId/publication', checkAuth, deleteGroupPublication)
+GroupsRouter.get('/:groupId/publications', checkAuth, getAllGroupPublications)
+GroupsRouter.delete('/:groupId', checkAuth, deleteGroups)
+GroupsRouter.delete('/:groupId/publications/:publicationId', checkAuth, deleteGroupPublication)
 
 exports.GroupsRouter = GroupsRouter
