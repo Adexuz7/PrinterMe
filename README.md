@@ -49,11 +49,16 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |A new user account   |
 
 ### Users
-|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                     |RETURNS                | 
-| :----: | --------------- | :---: | ------------------------------ | --------------------- |
-|GET     |/users/timeline  |Yes    |USBAT see the user's timeline   |Shows publications and comments of followed users   |
-|GET     |/users/:userid   |Yes    |USBAT see the user's profile    |Shows other user's profile   |
-|POST    |/users/comments  |Yes    |USBAT post a comment            |Shows publications and comments of followed users   |
+|METHOD  |ENDPOINT                         |TOKEN  |DESCRIPTION                             |RETURNS                | 
+| :----: | ---------------                 | :---: | ------------------------------         | --------------------- |
+|GET     |/users/timeline                  |Yes    |USBAT see the user's timeline           |Shows publications and comments of followed users   |
+
+|GET     |/users/:userid                   |Yes    |USBAT see the user's profile            |Shows other user's profile   |
+|POST    |/users/comments                  |Yes    |USBAT post a comment in a publication   |Shows the comment you did on the publication   |
+|GET     |/users/:userid/gallery           |Yes    |USBAT see the user's gallery of images  |Shows other user's images posted   |
+|GET     |/users/pay/products/:productid   |Yes    |USBAT can buy a product/service         |Shows the sale created   |
+|PUT     |/users/:userid                   |Yes    |USBAT follow or unfollow other user     |Shows the user you follow or unfollow   |
+|POST    |/users/comments                  |Yes    |USBAT post a comment in a publication   |Shows the comment you did on the publication   |
 
 ## Sign up
 POST
