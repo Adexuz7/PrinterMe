@@ -15,14 +15,14 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ### Admin
 |METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
-| ------ | --------------- | ----- | --------------------------         | --------------------- |
+| :----: | --------------- | :---: | --------------------------         | --------------------- |
 |GET     |/users           |Yes    |ASBAT see users list                |All the users in the platform   |
 |POST    |/printers        |Yes    |ASBAT add a printer to DB           |JSON  Object of the printer added   |
 |POST    |/printers/delete |Yes    |ASBAT delete a printer to DB        |JSON  Object of the printer deleted data   |
 
 ### Authentication
 |METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
-| ------ | --------------- | ----- | --------------------------         | --------------------- |
+| :----: | --------------- | :---: | --------------------------         | --------------------- |
 |POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
 |POST    |/auth/login      |No     |USBAT login                         |Access to the platform with your account   | 
 |DELETE  |/auth/delete     |Yes    |USBAT delete their accout           |A 'deleted account' message   | 
@@ -30,7 +30,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ### Explore
 |METHOD  |ENDPOINT                              |TOKEN  |DESCRIPTION                                                   |RETURNS                | 
-| ------ | ------------------------------------ | ----- | ------------------------------------------------------------ | --------------------- |
+| :----: | ------------------------------------ | :---: | ------------------------------------------------------------ | --------------------- |
 |GET     |/explore                              |No     |USBAT see random user's publications                          |A list of random publications chronologically ordered   |
 |GET     |/explore/search?query=word            |Yes    |USBAT search for a specific word                              |A list of publications with contains the word in their value "tag"   |
 |GET     |/explore/filter/materials             |Yes    |USBAT filter the timeline in printer's materials impresions   |A list of seller's publications with printers can use this specific material   |
@@ -43,16 +43,17 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ### Groups
 |METHOD  |ENDPOINT                      |TOKEN  |DESCRIPTION                             |RETURNS                | 
-| ------ | ---------------------------- | ----- | -------------------------------------- | --------------------- |
+| :----: | ---------------------------- | :---: | -------------------------------------- | --------------------- |
 |POST    |/groups                       |Yes    |USBAT create a new group                |A new user account   |
 |GET     |/groups/:groupid              |Yes    |USBAT navigate on group timeline        |The user data   |
 |POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |A new user account   |
 
 ### Users
-|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                         |RETURNS                | 
-| ------ | --------------- | ----- | --------------------------         | --------------------- |
-|POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
-|GET     |/auth/signup     |Yes    |USBAT can check if it's logged in   |The user data   |
+|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                     |RETURNS                | 
+| :----: | --------------- | :---: | ------------------------------ | --------------------- |
+|GET     |/users/timeline  |Yes    |USBAT see the user's timeline   |Shows publications and comments of followed users   |
+|GET     |/users/:userid   |Yes    |USBAT see the user's profile    |Shows other user's profile   |
+|POST    |/users/comments  |Yes    |USBAT post a comment            |Shows publications and comments of followed users   |
 
 ## Sign up
 POST
