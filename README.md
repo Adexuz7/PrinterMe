@@ -13,15 +13,13 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 
 ## EndPoints
 
-|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION             |RETURNS                | 
-| ------ | --------------- | ----- | ---------------------- | --------------------- |
-|GET     |/auth/signup     |No     |USBAT sign up           |A new user account     |
-|GET     |/auth/login      |No     |USBAT sign up           |A new user account     | 
+|METHOD  |ENDPOINT         |TOKEN  |DESCRIPTION                 |RETURNS                | 
+| ------ | --------------- | ----- | -------------------------- | --------------------- |
+|GET     |/auth/signup     |No     |USBAT sign up               |A new user account   |
+|GET     |/auth/login      |No     |USBAT login                 |Access to the platform with your account   | 
+|DELETE  |/auth/delete     |Yes    |USBAT delete their accout   |A 'deleted account' message   | 
 
 
-```
-baseUrl = http://localhost:3000/api
-```
 ## Sign up
 POST
 ```
