@@ -11,7 +11,7 @@ const {
   updatePublication
 } = require('../controllers/publications.controller')
 
-PublicationsRouter.get('/', checkAuth, getAllPublications)
+PublicationsRouter.get('/', getAllPublications)
 PublicationsRouter.post('/', checkAuth, createPublication)
 PublicationsRouter.get('/:publication/comments', checkAuth, getAllComments)
 PublicationsRouter.post('/:publication/comments', checkAuth, addComment)
