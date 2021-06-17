@@ -39,7 +39,6 @@ exports.createUser = (req, res) => {
 }
 
 exports.deleteUser = (req, res) => {
-  console.log(res.locals.user)
   UserModel
     .deleteOne({ _id: res.locals.user._id })
     .then(user => {

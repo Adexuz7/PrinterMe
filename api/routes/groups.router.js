@@ -1,4 +1,4 @@
-const GroupsRouter = require('express').Router()
+const groupsRouter = require('express').Router()
 const { checkAuth } = require('../../utils')
 
 const {
@@ -6,6 +6,6 @@ const {
 } = require('../controllers/groups.controller')
 
 //GroupsRouter.get('/', checkAuth, getAllUsersPublications)
-GroupsRouter.post('/', createGroup)
+groupsRouter.post('/', createGroup)
 
-exports.GroupsRouter = GroupsRouter
+exports.groupsRouter = groupsRouter

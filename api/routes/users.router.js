@@ -18,12 +18,13 @@ const {
 
 userRouter
   .get('/', checkAuth, isAdmin, getAllUsers)
-  .get('/timeline', checkAuth, userTimeline)
-  .get('/sellers', checkAuth, getAllSellers)
-  .get('/:userid', checkAuth, getUser)
   .post('/', checkAuth, createUser)
-  .put('/printer', checkAuth, addUserPrinter)
-  .put('/:userid', checkAuth, followUser)
   .delete('/delete', checkAuth, deleteUser)
+  .get('/timeline', checkAuth, userTimeline)
+  .get('/:userid', checkAuth, getUser)
+  .put('/:userid', checkAuth, followUser)
+  .get('/sellers', checkAuth, getAllSellers)
+  .put('/printer', checkAuth, addUserPrinter)
   .delete('/printer', checkAuth, removeUserPrinter)
+
 exports.userRouter = userRouter

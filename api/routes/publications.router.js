@@ -1,4 +1,4 @@
-const PublicationsRouter = require('express').Router()
+const publicationsRouter = require('express').Router()
 const { checkAuth } = require('../../utils')
 
 const {
@@ -11,14 +11,27 @@ const {
   updatePublication
 } = require('../controllers/publications.controller')
 
-PublicationsRouter.get('/', checkAuth, getAllPublications)
-PublicationsRouter.post('/', checkAuth, createPublication)
-PublicationsRouter.get('/:publication/comments', checkAuth, getAllComments)
-PublicationsRouter.post('/:publication/comments', checkAuth, addComment)
+const {
+  createProducts,
+  createServices,
+  modifyProducts,
+  modifyServices,
+  deleteProducts,
+  deleteServices
+} = require('../controllers/products.controller')
 
-PublicationsRouter.put('/:publication/', checkAuth, updatePublication)
+publicationsRouter
+  .get('/', checkAuth, getAllPublications)
+  .post('/', checkAuth, createPublication)
+  .put('/:publication/', checkAuth, updatePublication)
+  .post('/:publication/comments', checkAuth, addComment)
+  .get('/:publication/comments', checkAuth, getAllComments)
+  .delete('/:publication/coments/:comment', checkAuth, deleteComment)
+  .post('/products', checkAuth, createProducts)
+  .post('/services', checkAuth, createServices)
+  .put('/products/:productid', checkAuth, modifyProducts)
+  .put('/services/:serviceid', checkAuth, modifyServices)
+  .delete('/products/:productid', checkAuth, deleteProducts)
+  .delete('/services/:serviceid', checkAuth, deleteServices)
 
-PublicationsRouter.delete('/:publication/', checkAuth, deletePublication)
-PublicationsRouter.delete('/:publication/:comment', checkAuth, deleteComment)
-
-exports.PublicationsRouter = PublicationsRouter
+exports.publicationsRouter = publicationsRouter
