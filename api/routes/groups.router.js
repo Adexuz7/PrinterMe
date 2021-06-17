@@ -16,12 +16,12 @@ const {
 GroupsRouter
   .post('/', checkAuth, createGroup)
   .post('/:groupId/publications', checkAuth, createGroupPublication)
-  .put('/:groupId/user/:userId', checkAuth, addUserGroup)
+  .put('/:groupId/users/:userId', checkAuth, addUserGroup)
   .get('/', checkAuth, getAllGroups)
   .get('/:groupId/publications', checkAuth, getAllGroupPublications)
   .get('/:groupId/publications/:publicationId', checkAuth, getGroupPublication)
   .delete('/:groupId', checkAuth, isModerator, deleteGroups)
-  .delete('/:groupId/user/:userId', checkAuth, deleteUserGroup)
+  .delete('/:groupId/users/:userId', checkAuth, deleteUserGroup)
   .delete('/:groupId/publications/:publicationId', checkAuth, isModerator, deleteGroupPublication)
 
 exports.GroupsRouter = GroupsRouter

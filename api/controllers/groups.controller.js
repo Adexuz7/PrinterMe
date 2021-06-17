@@ -102,7 +102,7 @@ exports.deleteGroups = (req, res) => {
   GroupsModel
     .findByIdAndDelete(req.params.groupId)
     .then(group => {
-      res.status(200).json(group)
+      res.status(200).json('Group delete')
     })
     .catch(err => {
       console.log(err)
@@ -118,7 +118,7 @@ exports.addUserGroup = (req, res) => {
         group.groupUsers.push(req.params.userId)
         group.save()
           .then(group => {
-            res.status(200).json(group)
+            res.status(200).json('User added to group')
           })
           .catch(err => {
             console.log(err)
@@ -142,7 +142,7 @@ exports.deleteUserGroup = (req, res) => {
         group.groupUsers.remove(req.params.userId)
         group.save()
           .then(group => {
-            res.status(200).json(group)
+            res.status(200).json('User deleted')
           })
           .catch(err => {
             console.log(err)
