@@ -3,17 +3,11 @@ const mongoose = require('mongoose')
 const saleSchema = new mongoose.Schema({
   designProduct: {
     type: mongoose.Types.ObjectId,
-    ref: 'designProducts',
-    required: true
+    ref: 'designProducts'
   },
   printService: {
     type: mongoose.Types.ObjectId,
-    ref: 'printServices',
-    required: true
-  },
-  unitPrice: {
-    type: Number,
-    required: true
+    ref: 'printServices'
   },
   quantity: {
     type: Number,
@@ -22,9 +16,7 @@ const saleSchema = new mongoose.Schema({
   shipment: {
     type: Boolean
   },
-  date: {
-    type: Date
-  },
+  date: Date,
   buyerId: {
     type: mongoose.Types.ObjectId,
     ref: 'users'

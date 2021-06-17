@@ -1,4 +1,4 @@
-const PublicationsRouter = require('express').Router()
+const publicationsRouter = require('express').Router()
 const { checkAuth } = require('../../utils')
 
 const {
@@ -17,7 +17,7 @@ const {
   deleteServices
 } = require('../controllers/products.controller')
 
-PublicationsRouter
+publicationsRouter
   .get('/', checkAuth, getAllPublications)
   .post('/', checkAuth, createPublication)
   .post('/products', checkAuth, createProducts)
@@ -29,4 +29,4 @@ PublicationsRouter
   .get('/:publication/comment', checkAuth, getAllComments)
   .post('/:publication/comment', checkAuth, addComment)
 
-exports.PublicationsRouter = PublicationsRouter
+exports.publicationsRouter = publicationsRouter
