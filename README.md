@@ -25,7 +25,6 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 | :----: | --------------- | :---: | --------------------------         | --------------------- |
 |POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
 |POST    |/auth/login      |No     |USBAT login                         |Access to the platform with your account   | 
-|DELETE  |/auth/delete     |Yes    |USBAT delete their accout           |A 'deleted account' message   | 
 |GET     |/auth/whoami     |Yes    |USBAT check if it's logged in       |The user data   |
 
 ### Explore
@@ -59,9 +58,15 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 ### Groups
 |METHOD  |ENDPOINT                      |TOKEN  |DESCRIPTION                             |RETURNS                | 
 | :----: | ---------------------------- | :---: | -------------------------------------- | --------------------- |
-|POST    |/groups                       |Yes    |USBAT create a new group                |A new user account   |
+|POST    |/groups                       |Yes    |USBAT create a new group                |A new group   |
+|GET     |/groups                       |Yes    |USBAT see all groups                    |Shows all groups created   |
 |GET     |/groups/:groupid              |Yes    |USBAT navigate on group timeline        |The user data   |
-|POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |A new user account   |
+|DELETE  |/groups/:groupid              |Yes    |USBAT delete the group                  |Confirmation of the action   |
+|POST    |/groups/:groupid/publications |Yes    |USBAT see publication on the group   |A new user account   |
+|POST    |/groups/:groupid/publications |Yes    |USBAT post a publication on the group   |See the publication posted   |
+|PUT     |/groups/:groupid/users/userid |Yes    |USBAT join a group                      |The group the user joined   |
+|DELETE  |/groups/:groupid/users/userid |Yes    |USBAT leaves a group                    |Confirmation of the action   |
+
 
 ### Users
 |METHOD  |ENDPOINT                                          |TOKEN  |DESCRIPTION                                         |RETURNS                | 
@@ -78,6 +83,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |DELETE   |/printers                                        |Yes    |USBAT remove a printer to their profile             |Shows the data of the user modified  |
 |GET      |/printers                                        |Yes    |USBAT see all printers of the database              |Shows all the printers  |
 |GET      |/history                                         |Yes    |USBAT see all the sales he made                     |Shows a list of all the sales of their products/services  |
+|DELETE   |/auth/delete                                     |Yes    |USBAT delete their accout                           |A 'deleted account' message   | 
 
 ## Sign up (POST)
 ```
