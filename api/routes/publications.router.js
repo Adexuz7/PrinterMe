@@ -5,7 +5,10 @@ const {
   getAllPublications,
   createPublication,
   getAllComments,
-  addComment
+  addComment,
+  deletePublication,
+  deleteComment,
+  updatePublication
 } = require('../controllers/publications.controller')
 
 const {
@@ -20,13 +23,15 @@ const {
 publicationsRouter
   .get('/', checkAuth, getAllPublications)
   .post('/', checkAuth, createPublication)
+  .put('/:publication/', checkAuth, updatePublication)
+  .post('/:publication/comments', checkAuth, addComment)
+  .get('/:publication/comments', checkAuth, getAllComments)
+  .delete('/:publication/coments/:comment', checkAuth, deleteComment)
   .post('/products', checkAuth, createProducts)
   .post('/services', checkAuth, createServices)
   .put('/products/:productid', checkAuth, modifyProducts)
   .put('/services/:serviceid', checkAuth, modifyServices)
   .delete('/products/:productid', checkAuth, deleteProducts)
   .delete('/services/:serviceid', checkAuth, deleteServices)
-  .get('/:publication/comment', checkAuth, getAllComments)
-  .post('/:publication/comment', checkAuth, addComment)
 
 exports.publicationsRouter = publicationsRouter

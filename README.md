@@ -26,7 +26,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |POST    |/auth/signup     |No     |USBAT sign up                       |A new user account   |
 |POST    |/auth/login      |No     |USBAT login                         |Access to the platform with your account   | 
 |DELETE  |/auth/delete     |Yes    |USBAT delete their accout           |A 'deleted account' message   | 
-|GET     |/auth/signup     |Yes    |USBAT check if it's logged in       |The user data   |
+|GET     |/auth/whoami     |Yes    |USBAT check if it's logged in       |The user data   |
 
 ### Explore
 |METHOD  |ENDPOINT                              |TOKEN  |DESCRIPTION                                                   |RETURNS                | 
@@ -40,6 +40,21 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/explore/filter/publications          |Yes    |USBAT filter the timeline with only publications              |Only shows publications on the timeline   |
 |GET     |/explore/filter/sellers               |Yes    |USBAT filter the timeline in sellers                          |Only shows sellers on the timeline   |
 |GET     |/explore/filter/sellers/publications  |Yes    |USBAT filter the timeline in sellers' publications            |Only shows sellers' on the timeline   |
+
+### Publications
+| METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS |
+| :---: | :--- | :---: | :--- | :--- |
+| GET | /publications | Yes | USBAT see all publications | All publications |
+| POST | /publications |Yes | USBAT post a publication | Shows the publication you posted |
+| PUT | /publications/:publication | Yes | USBAT update a publication | Shows a confirmation message |
+| DELETE | /publications/:publication | Yes | USBAT delete your publication | Shows the publication you deleted |
+
+#### Publication comments
+| METHOD | ENDPOINT | TOKEN | DESCRIPTION | RETURNS |
+| :---: | :--- | :---: | :--- | :--- |
+| GET | /publications/:publication/comments | Yes | USBAT see all comments from a publication | Shows the publications with it's comments |
+| POST | /publications/:publication/comments | Yes |USBAT post a comment in a publication | Shows the publications with it's comments |
+| DELETE | /publications/:publication/:comment | Yes | USBAT delete your comment from a publication | Shows the publications with it's comments |
 
 ### Groups
 |METHOD  |ENDPOINT                      |TOKEN  |DESCRIPTION                             |RETURNS                | 
@@ -55,22 +70,21 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |GET     |/users/:userid                                    |Yes    |USBAT see the user's profile                        |Shows other user's profile   |
 |POST    |/users/comments                                   |Yes    |USBAT post a comment in a publication               |Shows the comment you did on the publication   |
 |GET     |/users/:userid/gallery                            |Yes    |USBAT see the user's gallery of images              |Shows other user's images posted   |
-|GET     |/users/pay/products/:productid                    |Yes    |USBAT can buy a product/service                     |Shows the sale created   |
+|GET     |/users/pay/products/:productid                    |Yes    |USBAT buy a product/service                         |Shows the sale created   |
 |PUT     |/users/:userid                                    |Yes    |USBAT follow or unfollow other user                 |Shows the user you follow or unfollow   |
-|POST    |/publications                                     |Yes    |USBAT create a publication                          |Shows the publication you posted   |
-|GET     |/publications/:publicationid/comments             |Yes    |USBAT can see all comments from a publication       |Shows the publications with their comments   |
-|POST    |/publications/:publicationid/comments             |Yes    |USBAT can post a comment in a publication           |Shows the publications with their comments   |
-|DELETE  |/publications/:publicationid/comments/:commentid  |Yes    |USBAT can delete their comment from a publication   |Shows the confirmation of your comment deleted   |
-|GET      |/profile                                         |Yes    |USBAT can see their own profile                     |Shows the data of the user   |
-|GET      |/profile                                         |Yes    |USBAT can see their own profile                     |Shows the data of the user   |
+|GET      |/profile                                         |Yes    |USBAT see their own profile                         |Shows the data of the user   |
+|PUT      |/profile                                         |Yes    |USBAT change their own profile                      |Shows the data of the user modified  |
+|PUT      |/printers                                        |Yes    |USBAT add a printer to their profile                |Shows the data of the user modified  |
+|DELETE   |/printers                                        |Yes    |USBAT remove a printer to their profile             |Shows the data of the user modified  |
+|GET      |/printers                                        |Yes    |USBAT see all printers of the database              |Shows all the printers  |
+|GET      |/history                                         |Yes    |USBAT see all the sales he made                     |Shows a list of all the sales of their products/services  |
 
-## Sign up
-POST
+## Sign up (POST)
 ```
-{{baseUrl}}/auth/signup
+/auth/signup
 ```
 Example:
-```
+```json
 {
     "name": "Ganondorf Dragmire",
     "username": "ganon",
@@ -79,30 +93,28 @@ Example:
     "phone": 123456789
 }
 ```
-## Login
+## Login (POST)
 ```
-{{baseUrl}}/auth/login
+/auth/login
 ```
-```
+```json
 {
     "email": "example@example.com",
     "password": "example"
 }
 ```
 ## Profile
-### Get your profile
-GET
+### GET your profile
 ```
-{{baseUrl}}/profile
+/profile
 ```
 
-### Edit profile
-Edit your user profile with PATCH
+### Update your profile (PUT)
 ```
-{{baseUrl}}/profile
+/profile
 ```
 Example:
-```
+```json
 {
     "phone": 123456789
 }
@@ -110,41 +122,55 @@ Example:
 
 ## Publications
 
-### Get all publications
-GET
+### GET all publications
 ```
-{{baseUrl}}/publications
+/publications
 ```
-### Post a publication
-Yo need to be logged in to make a new publication
-POST
+### POST a publication
 ```
-{{baseUrl}}/publications
+/publications
 ```
 Example:
-```
+```json
 {
     "title": "Test publication",
     "description": "This is a test publication"
 }
 ```
-## Comments
-### Get all comments
-GET
+### Update a publication (PUT)
 ```
-{{baseUrl}}/publications/{{publicationId}}/comment
-```
-### Add comment
-POST
-```
-{{baseUrl}}/publications/{{publicationId}}/comment
+/publications/:publication
 ```
 Example:
+```json
+{
+    "title": "This is a EDITED publication",
+    "description": "This publication was edited"
+}
 ```
+### DELETE a publication
+```
+/publications/:publication
+```
+## Comments
+### GET all comments
+```
+/publications/:publication/comments
+```
+### POST a comment
+```
+/publications/:publication/comments
+```
+Example:
+```json
 {
     "description": "This is a test comment",
     "rate": 4
 }
+```
+### DELETE a comment
+```
+/publications/:publication/:comment
 ```
 # Usage
 
