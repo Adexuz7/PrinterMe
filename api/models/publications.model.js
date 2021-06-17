@@ -42,7 +42,7 @@ const publicationSchema = new mongoose.Schema({
   comment: [commentSchema],
   report: Number,
   type: {
-    String,
+    type: String,
     enum: ['user', 'seller']
   },
   seller: {

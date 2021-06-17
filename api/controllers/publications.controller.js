@@ -19,6 +19,7 @@ exports.createPublication = (req, res) => {
   const request = req.body
 
   request.userId = user._id // Add userId
+  request.type = user.role // Add publication type based on user role
   request.date = new Date() // Add date
 
   PublicationsModel

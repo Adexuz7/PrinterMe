@@ -52,7 +52,11 @@ exports.login = (req, res) => {
           if (!result) {
             return res.json({ error: 'Wrong email or password' }, err)
           }
-          const userData = { name: user.name, email: user.email }
+          const userData = {
+            name: user.name,
+            email: user.email,
+            role: user.role
+          }
 
           const token = jwt.sign(
             userData,
@@ -70,5 +74,9 @@ exports.login = (req, res) => {
 }
 
 exports.whoami = (req, res) => {
-  res.json({ name: res.locals.user.name, email: res.locals.user.email })
+  res.json({
+    name: res.locals.user.name,
+    email: res.locals.user.email,
+    role: res.locals.user.role
+  })
 }
