@@ -74,6 +74,18 @@ exports.deleteGroupPublication = (req, res) => {
     })
 }
 
+exports.getGroupPublication = (req, res) => {
+  GroupsModel
+    .findById(req.params.groupId)
+    .populate('groupPublications')
+    .then(group => {
+      const pub = group.groupPublications.filter(publication => publication.equals(req.params.publicationId))
+      res.status(200).json(pub)
+    })
+
+    .catch(err => res.status(500).json(err))
+}
+
 exports.getAllGroups = (req, res) => {
   GroupsModel
     .find()

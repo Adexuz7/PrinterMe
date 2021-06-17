@@ -9,16 +9,19 @@ const {
   deleteGroupPublication,
   getAllGroupPublications,
   addUserGroup,
-  deleteUserGroup
+  deleteUserGroup,
+  getGroupPublication
 } = require('../controllers/groups.controller')
 
-GroupsRouter.post('/', checkAuth, createGroup)
-GroupsRouter.post('/:groupId/publications', checkAuth, createGroupPublication)
-GroupsRouter.put('/:groupId/user/:userId', checkAuth, addUserGroup)
-GroupsRouter.get('/', checkAuth, getAllGroups)
-GroupsRouter.get('/:groupId/publications', checkAuth, getAllGroupPublications)
-GroupsRouter.delete('/:groupId', checkAuth, isModerator, deleteGroups)
-GroupsRouter.delete('/:groupId/user/:userId', checkAuth, deleteUserGroup)
-GroupsRouter.delete('/:groupId/publications/:publicationId', checkAuth, isModerator, deleteGroupPublication)
+GroupsRouter
+  .post('/', checkAuth, createGroup)
+  .post('/:groupId/publications', checkAuth, createGroupPublication)
+  .put('/:groupId/user/:userId', checkAuth, addUserGroup)
+  .get('/', checkAuth, getAllGroups)
+  .get('/:groupId/publications', checkAuth, getAllGroupPublications)
+  .get('/:groupId/publications/:publicationId', checkAuth, getGroupPublication)
+  .delete('/:groupId', checkAuth, isModerator, deleteGroups)
+  .delete('/:groupId/user/:userId', checkAuth, deleteUserGroup)
+  .delete('/:groupId/publications/:publicationId', checkAuth, isModerator, deleteGroupPublication)
 
 exports.GroupsRouter = GroupsRouter
