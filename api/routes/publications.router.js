@@ -24,6 +24,7 @@ publicationsRouter
   .get('/', checkAuth, getAllPublications)
   .post('/', checkAuth, createPublication)
   .put('/:publication/', checkAuth, updatePublication)
+  .delete('/:publication', checkAuth, deletePublication)
   .post('/:publication/comments', checkAuth, addComment)
   .get('/:publication/comments', checkAuth, getAllComments)
   .delete('/:publication/coments/:comment', checkAuth, deleteComment)
