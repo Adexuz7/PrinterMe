@@ -97,3 +97,51 @@ exports.deleteGroups = (req, res) => {
       res.status(500).json({ err: 'Error' })
     })
 }
+
+exports.addUserGroup = (req, res) => {
+  GroupsModel
+    .findById(req.params.groupId)
+    .then(group => {
+      if (!group.groupUsers.includes(req.params.userId)) {
+        group.groupUsers.push(req.params.userId)
+        group.save()
+          .then(group => {
+            res.status(200).json(group)
+          })
+          .catch(err => {
+            console.log(err)
+            res.status(500).json({ err: 'Error' })
+          })
+      } else {
+        res.status(200).send('User already belongs to the group')
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}
+
+exports.deleteUserGroup = (req, res) => {
+  GroupsModel
+    .findById(req.params.groupId)
+    .then(group => {
+      if (group.groupUsers.includes(req.params.userId)) {
+        group.groupUsers.remove(req.params.userId)
+        group.save()
+          .then(group => {
+            res.status(200).json(group)
+          })
+          .catch(err => {
+            console.log(err)
+            res.status(500).json({ err: 'Error' })
+          })
+      } else {
+        res.status(200).send('User is not include in the group')
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ err: 'Error' })
+    })
+}

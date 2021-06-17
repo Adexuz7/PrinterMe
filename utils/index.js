@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const { GroupsModel } = require('../api/models/groups.model')
 const { UserModel } = require('../api/models/users.model')
-const mongoose = require ('mongoose')
+const mongoose = require('mongoose')
 
 exports.checkAuth = (req, res, next) => {
   jwt.verify(req.headers.token, process.env.SECRET, (err, token) => {
