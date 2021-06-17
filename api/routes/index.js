@@ -4,8 +4,8 @@ const { profileRouter } = require('./profile.router')
 const { publicationsRouter } = require('./publications.router')
 const { authRouter } = require('./auth.router')
 const { printersRouter } = require('./printers.router')
-const { groupsRouter } = require('../routes/groups.router')
-const { salesRouter } = require('../routes/sales.router')
+const { groupsRouter } = require('./groups.router')
+const { salesRouter } = require('./sales.router')
 
 router
   .use('/users', userRouter)
