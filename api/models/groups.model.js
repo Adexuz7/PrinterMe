@@ -11,33 +11,22 @@ const groupSchema = new mongoose.Schema({
     max: 300,
     required: [true, 'You have to put a description']
   },
-  image: {
-    type: Array,
-    items: {
-      type: String
-    }
-  },
+  image: [{
+    type: String
+  }],
   moderator: {
-    type: Array,
-    items: {
-      type: mongoose.Types.ObjectId,
-      ref: 'users'
-    }
+    type: mongoose.Types.ObjectId,
+    ref: 'users',
+    required: true
   },
-  groupUsers: {
-    type: Array,
-    items: {
-      type: mongoose.Types.ObjectId,
-      ref: 'users'
-    }
-  },
-  groupPublications: {
-    type: Array,
-    items: {
-      type: mongoose.Types.ObjectId,
-      ref: 'publications'
-    }
-  },
+  groupUsers: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'users'
+  }],
+  groupPublications: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'publications'
+  }],
   report: {
     type: Number
   }
