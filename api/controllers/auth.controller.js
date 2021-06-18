@@ -5,11 +5,12 @@ const { UserModel } = require('../models/users.model')
 
 exports.signup = (req, res) => {
   const hashedPwd = bcrypt.hashSync(req.body.password, 10)
+
   UserModel
     .findOne({ email: req.body.email })
     .then(user => {
       if (user) {
-        res.status(409).json({ err: 'Email already exists. Try another one' })
+        res.status(409).json('Email already exists. Try another one')
       } else {
         UserModel
           .create({
@@ -26,20 +27,14 @@ exports.signup = (req, res) => {
             const token = jwt.sign(
               userData,
               process.env.SECRET, // TODO SECRET MORE SECRET PLEASE
-              { expiresIn: '7d' }
+              { expiresIn: '5d' }
             )
             return res.json({ token: token, ...userData })
           })
-          .catch(err => {
-            console.log(err)
-            res.status(500).json(err.message)
-          })
+          .catch(err => res.status(500).json(err.message))
       }
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ msg: 'Error' })
-    })
+    .catch(err => res.status(500).json(err))
 }
 
 exports.login = (req, res) => {
@@ -50,7 +45,7 @@ exports.login = (req, res) => {
       if (user) {
         bcrypt.compare(req.body.password, user.password, (err, result) => {
           if (!result) {
-            return res.json({ error: 'Wrong email or password' }, err)
+            return res.json('Wrong email or password', err)
           }
           const userData = {
             name: user.name,
@@ -61,16 +56,13 @@ exports.login = (req, res) => {
           const token = jwt.sign(
             userData,
             process.env.SECRET,
-            { expiresIn: '1h' }
+            { expiresIn: '5d' }
           )
           return res.json({ token: token, ...userData })
         })
       }
     })
-    .catch(err => {
-      console.log(err)
-      res.json({ err: 'Error' })
-    })
+    .catch(err => res.json(err))
 }
 
 exports.whoami = (req, res) => {
