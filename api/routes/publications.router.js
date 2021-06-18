@@ -3,6 +3,7 @@ const { checkAuth } = require('../../utils')
 
 const {
   getAllPublications,
+  getOnePublication,
   createPublication,
   getAllComments,
   addComment,
@@ -21,13 +22,20 @@ const {
 } = require('../controllers/products.controller')
 
 publicationsRouter
-  .get('/', checkAuth, getAllPublications)
+  // Publications
+  .get('/', getAllPublications)
   .post('/', checkAuth, createPublication)
+
+  // Specific publication
+  .get('/:publication/', getOnePublication)
   .put('/:publication/', checkAuth, updatePublication)
   .delete('/:publication', checkAuth, deletePublication)
+
+  // Comments
   .post('/:publication/comments', checkAuth, addComment)
   .get('/:publication/comments', checkAuth, getAllComments)
   .delete('/:publication/coments/:comment', checkAuth, deleteComment)
+
   .post('/products', checkAuth, createProducts)
   .post('/services', checkAuth, createServices)
   .put('/products/:productid', checkAuth, modifyProducts)

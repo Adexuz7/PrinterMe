@@ -5,13 +5,15 @@ const { PublicationsModel } = require('../models/publications.model')
 exports.getAllPublications = (req, res) => {
   PublicationsModel
     .find()
-    .then(publications => {
-      res.json(publications)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(publications => res.json(publications))
+    .catch(err => res.status(500).json(err))
+}
+
+exports.getOnePublication = (req, res) => {
+  PublicationsModel
+    .findById(req.params.publication)
+    .then(publication => res.status(200).json(publication))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.createPublication = (req, res) => {
@@ -25,16 +27,11 @@ exports.createPublication = (req, res) => {
   PublicationsModel
     .create(req.body)
     .then(newPublication => {
-      res.status(200).json(newPublication)
       user.publication.push(newPublication.id) // Add publication ref to user publications
       user.save() // Save changes to db
-        .then(user => console.log('Publication OK'))
-        .catch(err => console.log(err))
+      res.status(200).json(newPublication)
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .catch(err => res.status(500).json(err))
 }
 
 exports.updatePublication = (req, res) => {
@@ -66,9 +63,7 @@ exports.deletePublication = (req, res) => {
 exports.getAllComments = (req, res) => {
   PublicationsModel
     .findById(req.params.publication)
-    .then(publication => {
-      res.status(200).json(publication.comment)
-    })
+    .then(publication => res.status(200).json(publication.comment))
     .catch(err => res.status(500).json(err))
 }
 
