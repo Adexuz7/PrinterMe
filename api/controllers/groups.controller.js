@@ -11,25 +11,21 @@ exports.getAllGroupPublications = (req, res) => {
 }
 
 exports.createGroup = (req, res) => {
-  console.log(req.body)
   GroupsModel
     .create({ moderator: res.locals.user.id, ...req.body })
-    .then(group => {
-      res.status(200).json(group)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(group => res.status(200).json(group))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.createGroupPublication = (req, res) => {
-  req.body.userId = res.locals.user.id
+  const user = res.locals.user
+  req.body.userId = user.id
+
   PublicationsModel
     .create(req.body)
     .then(publication => {
-      res.locals.user.publication.push(mongoose.Types.ObjectId(publication.id))
-      res.locals.user.save()
+      user.publication.push(mongoose.Types.ObjectId(publication.id))
+      user.save()
 
       GroupsModel
         .findById(req.params.groupId)
@@ -38,23 +34,19 @@ exports.createGroupPublication = (req, res) => {
           group.save()
           res.status(200).json(publication)
         })
-        .catch(err => {
-          console.log(err)
-          res.status(500).json({ err: 'Error' })
-        })
+        .catch(err => res.status(500).json(err))
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .catch(err => res.status(500).json(err))
 }
 
 exports.deleteGroupPublication = (req, res) => {
+  const user = res.locals.user
+
   PublicationsModel
     .findByIdAndDelete(req.params.publicationId)
     .then(publication => {
-      res.locals.user.publication.remove(publication.id)
-      res.locals.user.save()
+      user.publication.remove(publication.id)
+      user.save()
 
       GroupsModel
         .findById(req.params.groupId)
@@ -63,15 +55,9 @@ exports.deleteGroupPublication = (req, res) => {
           group.save()
           res.status(200).json(publication)
         })
-        .catch(err => {
-          console.log(err)
-          res.status(500).json({ err: 'Error' })
-        })
+        .catch(err => res.status(500).json(err))
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .catch(err => res.status(500).json(err))
 }
 
 exports.getGroupPublication = (req, res) => {
@@ -82,32 +68,21 @@ exports.getGroupPublication = (req, res) => {
       const pub = group.groupPublications.filter(publication => publication.equals(req.params.publicationId))
       res.status(200).json(pub)
     })
-
     .catch(err => res.status(500).json(err))
 }
 
 exports.getAllGroups = (req, res) => {
   GroupsModel
     .find()
-    .then(group => {
-      res.json(group)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(group => res.status(200).json(group))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.deleteGroups = (req, res) => {
   GroupsModel
     .findByIdAndDelete(req.params.groupId)
-    .then(group => {
-      res.status(200).json('Group delete')
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(group => res.status(200).json('Group deleted'))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.addUserGroup = (req, res) => {
@@ -117,21 +92,13 @@ exports.addUserGroup = (req, res) => {
       if (!group.groupUsers.includes(req.params.userId)) {
         group.groupUsers.push(req.params.userId)
         group.save()
-          .then(group => {
-            res.status(200).json('User added to group')
-          })
-          .catch(err => {
-            console.log(err)
-            res.status(500).json({ err: 'Error' })
-          })
+          .then(group => res.status(200).json('User added to group'))
+          .catch(err => res.status(500).json(err))
       } else {
         res.status(200).send('User already belongs to the group')
       }
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .catch(err => res.status(500).json(err))
 }
 
 exports.deleteUserGroup = (req, res) => {
@@ -141,19 +108,11 @@ exports.deleteUserGroup = (req, res) => {
       if (group.groupUsers.includes(req.params.userId)) {
         group.groupUsers.remove(req.params.userId)
         group.save()
-          .then(group => {
-            res.status(200).json('User deleted')
-          })
-          .catch(err => {
-            console.log(err)
-            res.status(500).json({ err: 'Error' })
-          })
+          .then(group => res.status(200).json('User deleted'))
+          .catch(err => res.status(500).json(err))
       } else {
-        res.status(200).send('User is not include in the group')
+        res.status(200).send('User is not included in the group')
       }
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .catch(err => res.status(500).json(err))
 }
