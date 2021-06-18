@@ -88,8 +88,7 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 |PUT      |/printers                                        |Yes    |USBAT add a printer to their profile                |User, seller, admin        |Shows the user modified with the new printer  |
 |DELETE   |/printers                                        |Yes    |USBAT remove a printer to their profile             |User, seller, admin        |Shows the data of the user without the printer |
 |GET      |/printers                                        |Yes    |USBAT see all printers of the database              |User, seller, admin        |Shows all the printers  |
-
-|DELETE   |/auth/delete                                     |Yes    |USBAT delete their accout                           |User, seller, admin        |A 'deleted account' message   | 
+| DELETE   | /auth/delete                                     | Yes    |USBAT delete their accout                           | User, seller, admin        | A 'deleted account' message   | 
 
 ## Sign up (POST)
 ```
