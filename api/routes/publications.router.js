@@ -2,14 +2,17 @@ const publicationsRouter = require('express').Router()
 const { checkAuth } = require('../../utils')
 
 const {
+  // Publications
   getAllPublications,
   getOnePublication,
   createPublication,
+  updatePublication,
+  deletePublication,
+
+  // Comments
   getAllComments,
   addComment,
-  deletePublication,
-  deleteComment,
-  updatePublication
+  deleteComment
 } = require('../controllers/publications.controller')
 
 const {
