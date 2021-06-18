@@ -1,78 +1,61 @@
 const { UserModel } = require('../models/users.model')
 
-// var ObjectId = require('mongoose').Types.ObjectId;
-
 exports.getAllUsers = (req, res) => {
   UserModel
     .find()
-    .then(users => {
-      res.json(users)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(users => res.status(200).json(users))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.getUser = (req, res) => {
   UserModel
     .findById(req.params.userid)
-    .then(users => {
-      res.json(users)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(users => res.status(200).json(users))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.createUser = (req, res) => {
   UserModel
     .create(req.body)
-    .then(user => {
-      res.status(200).json(user)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json(err)
-    })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.deleteUser = (req, res) => {
   UserModel
     .deleteOne({ _id: res.locals.user._id })
-    .then(user => {
-      console.log('user: ', user)
-      res.status(200).json(user)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json(err)
-    })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.userTimeline = (req, res) => {
   UserModel
     .find({ _id: { $in: res.locals.user.follows } })
     .then(users => {
+      // TO DO
       console.log(users)
     })
     .catch(err => {
+      // TO DO
       console.log(err)
     })
 }
 
 exports.followUser = (req, res) => {
-  if (!res.locals.user.follow.includes(req.params.userid)) {
-    res.locals.user.follow.push(req.params.userid)
+  const user = res.locals.user
+  const request = req.params
+
+  if (!user.follow.includes(request.userid)) {
+    user.follow.push(request.userid)
   } else {
-    res.locals.user.follow.remove(req.params.userid)
+    user.follow.remove(request.userid)
   }
-  res.locals.user
+
+  user
     .save()
     .then(user => {
       UserModel
-        .findById(req.params.userid)
+        .findById(request.userid)
         .then(followed => {
           if (!followed.follower.includes(user.id)) {
             followed.follower.push(user.id)
@@ -83,48 +66,34 @@ exports.followUser = (req, res) => {
         })
       res.status(200).json(user)
     })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .catch(err => res.status(500).json(err))
 }
 
 exports.getAllSellers = (req, res) => {
   UserModel
     .find({ role: 'seller' })
-
-    .then(sellers => {
-      console.log(sellers)
-      res.json(sellers)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(sellers => res.status(200).json(sellers))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.addUserPrinter = (req, res) => {
-  res.locals.user.seller.printer.push(req.body.printerId)
-  res.locals.user
+  const user = res.locals.user
+
+  user.seller.printer.push(req.body.printerId) // Add printer ref to user
+
+  user
     .save()
-    .then(user => {
-      res.status(200).json(user)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json(err))
 }
 
 exports.removeUserPrinter = (req, res) => {
-  res.locals.user.seller.printer.remove(req.body.printerId)
-  res.locals.user
+  const user = res.locals.user
+
+  user.seller.printer.remove(req.body.printerId) // Remove printer ref from user
+
+  user
     .save()
-    .then(user => {
-      res.status(200).json(user)
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ err: 'Error' })
-    })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.status(500).json(err))
 }

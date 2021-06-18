@@ -22,17 +22,13 @@ exports.createSaleTicket = async function createSaleTicket (req, res) {
 exports.modifySale = (req, res) => {
   SaleModel
     .findOneAndUpdate({ _id: req.params.saleid }, req.body)
-    .then(sale => {
-      res.status(200).json(sale, 'Your sale was modified')
-    })
+    .then(sale => res.status(200).json(sale, 'Your sale was modified'))
     .catch(err => res.status(500).json(err))
 }
 
 exports.deleteSale = (req, res) => {
   SaleModel
     .deleteOne({ _id: req.params.saleid })
-    .then(sale => {
-      res.status(200).json(sale, 'Your sale was canceled')
-    })
+    .then(sale => res.status(200).json(sale, 'Your sale was canceled'))
     .catch(err => res.status(500).json(err))
 }
