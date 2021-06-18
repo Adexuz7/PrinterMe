@@ -43,9 +43,9 @@ Actually PrinterMe is developed to be a Back-end project, so it's not going to h
 ### Publications
 | METHOD | ENDPOINT | TOKEN | DESCRIPTION | PERMITS | RETURNS |
 | :---: | :--- | :---: | :--- | :-------: | :--- |
-| GET | /publications | Yes | USBAT see all publications | All | All publications |
+| GET | /publications | No | USBAT see all publications | All | All publications |
 | POST | /publications |Yes | USBAT post a publication |User, seller, admin | Shows the publication you posted |
-| GET | /publications/:publication | Yes | USBAT see a specific publication | All | A publication |
+| GET | /publications/:publication | No | USBAT see a specific publication | All | A publication |
 | PUT | /publications/:publication | Yes | USBAT update a publication | User, seller, admin | Shows a confirmation message |
 | DELETE | /publications/:publication | Yes | USBAT delete your publication | User, seller, admin | Shows the publication you deleted |
 

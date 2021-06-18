@@ -32,10 +32,11 @@ publicationsRouter
   .delete('/:publication', checkAuth, deletePublication)
 
   // Comments
+  .get('/:publication/comments', getAllComments)
   .post('/:publication/comments', checkAuth, addComment)
-  .get('/:publication/comments', checkAuth, getAllComments)
   .delete('/:publication/coments/:comment', checkAuth, deleteComment)
 
+  // Products and services
   .post('/products', checkAuth, createProducts)
   .post('/services', checkAuth, createServices)
   .put('/products/:productid', checkAuth, modifyProducts)
