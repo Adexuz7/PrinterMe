@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken')
-const { GroupsModel } = require('../api/models/groups.model')
 const { UserModel } = require('../api/models/users.model')
-const mongoose = require('mongoose')
+const { GroupsModel } = require('../api/models/groups.model')
 
 exports.checkAuth = (req, res, next) => {
   jwt.verify(req.headers.token, process.env.SECRET, (err, token) => {
-    if (err) { res.status(403).json({ error: 'Token not valid' }) }
+    if (err) res.status(403).json('Token not valid')
+
     UserModel
       .findOne({ email: token.email })
       .then(user => {
@@ -13,7 +13,7 @@ exports.checkAuth = (req, res, next) => {
           res.locals.user = user
           next()
         } else {
-          res.json({ err: 'Token not valid' })
+          res.json('Token not valid')
         }
       })
   })
@@ -21,7 +21,8 @@ exports.checkAuth = (req, res, next) => {
 
 exports.isAdmin = (req, res, next) => {
   jwt.verify(req.headers.token, process.env.SECRET, (err, token) => {
-    if (err) { res.status(403).json({ error: 'Token not valid' }) }
+    if (err) res.status(403).json('Token not valid')
+
     UserModel
       .findOne({ email: token.email })
       .then(user => {
@@ -29,7 +30,7 @@ exports.isAdmin = (req, res, next) => {
           res.locals.user = user
           next()
         } else {
-          res.json({ err: 'You don\'t have permits' })
+          res.json('You don\'t have permits')
         }
       })
   })
@@ -37,26 +38,25 @@ exports.isAdmin = (req, res, next) => {
 
 exports.isModerator = (req, res, next) => {
   jwt.verify(req.headers.token, process.env.SECRET, (err, token) => {
-    if (err) { return res.status(403).json({ error: 'Token not valid' }) }
+    if (err) res.status(403).json('Token not valid')
+
     GroupsModel
       .findOne({ $and: [{ moderator: res.locals.user._id }, { _id: req.params.groupId }] })
       .then(group => {
         if (group.moderator.equals(res.locals.user.id)) {
           next()
         } else {
-          res.json({ err: 'You don\'t have permits' })
+          res.json('You don\'t have permits')
         }
       })
-      .catch(err => {
-        console.log(err)
-        res.status(500).json({ msg: 'Error' })
-      })
+      .catch(err => res.status(500).json(err))
   })
 }
 
 exports.isSeller = (req, res, next) => {
   jwt.verify(req.headers.token, process.env.SECRET, (err, token) => {
-    if (err) { res.status(403).json({ error: 'Token not valid' }) }
+    if (err) res.status(403).json('Token not valid')
+
     UserModel
       .findOne({ email: token.email })
       .then(user => {

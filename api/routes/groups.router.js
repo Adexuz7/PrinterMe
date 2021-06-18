@@ -2,26 +2,36 @@ const groupsRouter = require('express').Router()
 const { checkAuth, isModerator } = require('../../utils')
 
 const {
-  createGroup,
-  createGroupPublication,
+  // Groups
   getAllGroups,
+  createGroup,
   deleteGroups,
-  deleteGroupPublication,
+
+  // Group publications
   getAllGroupPublications,
+  getGroupPublication,
+  createGroupPublication,
+  deleteGroupPublication,
+
+  // Group users
   addUserGroup,
-  deleteUserGroup,
-  getGroupPublication
+  deleteUserGroup
 } = require('../controllers/groups.controller')
 
 groupsRouter
-  .post('/', checkAuth, createGroup)
-  .post('/:groupId/publications', checkAuth, createGroupPublication)
-  .put('/:groupId/users/:userId', checkAuth, addUserGroup)
+  // Groups
   .get('/', checkAuth, getAllGroups)
+  .post('/', checkAuth, createGroup)
+  .delete('/:groupId', checkAuth, isModerator, deleteGroups)
+
+  // Group Publications
   .get('/:groupId/publications', checkAuth, getAllGroupPublications)
   .get('/:groupId/publications/:publicationId', checkAuth, getGroupPublication)
-  .delete('/:groupId', checkAuth, isModerator, deleteGroups)
-  .delete('/:groupId/users/:userId', checkAuth, deleteUserGroup)
+  .post('/:groupId/publications', checkAuth, createGroupPublication)
   .delete('/:groupId/publications/:publicationId', checkAuth, isModerator, deleteGroupPublication)
+
+  // Group users
+  .put('/:groupId/users/:userId', checkAuth, addUserGroup)
+  .delete('/:groupId/users/:userId', checkAuth, deleteUserGroup)
 
 exports.groupsRouter = groupsRouter
